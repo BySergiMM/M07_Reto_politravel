@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="37dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="130dp"
             android:gravity="center"
             android:text="POLITRAVEL"
             android:textColor="#000000"
@@ -36,22 +36,20 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="240dp"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="La aplicación de viajes que te ayudará a planificar y disfrutar al máximo tus próximos viajes."
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_marginTop="550dp"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="50"
-            android:progressDrawable="@drawable/custom_progressbar" />
+            android:background="@drawable/custom_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"/>
 
 
     </RelativeLayout>
