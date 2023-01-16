@@ -44,10 +44,10 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="550dp"
+            android:layout_width="300dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="555dp"
             android:background="@drawable/custom_progressbar"
             style="?android:attr/progressBarStyleHorizontal"/>
 
