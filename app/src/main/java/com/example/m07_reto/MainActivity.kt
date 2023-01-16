@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private var countDownTimer: CountDownTimer? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,13 +26,14 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                //Cambia de actividad
+
             }
         }.start()
 
         findViewById<View>(R.id.jueves).setOnClickListener {
             countDownTimer?.cancel()
-            //Cambia de actividad
+            val intent = Intent(this, lista::class.java)
+            startActivity(intent)
         }
     }
 }
