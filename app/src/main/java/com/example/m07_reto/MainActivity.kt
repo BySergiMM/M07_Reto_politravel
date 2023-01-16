@@ -1,7 +1,6 @@
 package com.example.m07_reto
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
