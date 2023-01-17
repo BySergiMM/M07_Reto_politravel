@@ -1,5 +1,6 @@
 package com.example.m07_reto
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,7 +9,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 
 private lateinit var progressBar: ProgressBar
-private val delay: Long = 10000 // 10 segundos
+private val delay: Long = 10000
 
 class MainActivity : AppCompatActivity() {
 

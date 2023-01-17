@@ -15,16 +15,16 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="268dp"
-            android:layout_height="220dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="300dp"
+            android:layout_width="308dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="280dp"
             android:background="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="37dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="85dp"
             android:gravity="center"
             android:text="POLITRAVEL"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="45dp"
             android:layout_marginTop="190dp"
             android:gravity="center"
             android:text="@string/eslogan"
@@ -48,7 +48,7 @@
             android:layout_width="300dp"
             android:layout_height="31dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="535dp" />
+            android:layout_marginTop="650dp" />
 
     </RelativeLayout>
 </LinearLayout>
