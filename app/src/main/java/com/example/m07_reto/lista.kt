@@ -13,7 +13,7 @@ class lista : AppCompatActivity() {
         setContentView(R.layout.activity_lista)
 
         val Juegos = mutableListOf(
-            Pokemon("Pokemon Y", R.drawable.logo, 1000000001),
+            Pokemon("Viaje a la luna", R.drawable.logo, 1000000001),
             Pokemon("Pokemon Go", R.drawable.logo, 1000000002),
             Pokemon("Pokemon Rojo", R.drawable.logo, 1000000003),
             Pokemon("Pokemon Rubi", R.drawable.logo, 1000000004),

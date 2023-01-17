@@ -20,12 +20,12 @@ class JuegosAdapter (private val context: Context,
     class JuegosAdapterViewHolder(val view: View):
         RecyclerView.ViewHolder(view)
     {
-        var lblGameName: TextView
-        var imgGameLogo: ImageView
+        var NombreViaje: TextView
+        var ImgViaje: ImageView
 
         init{
-            imgGameLogo = view.findViewById(R.id.ImgListPokemon)
-            lblGameName = view.findViewById(R.id.LblListPokemonName)
+            ImgViaje = view.findViewById(R.id.ImgViaje)
+            NombreViaje = view.findViewById(R.id.NombreViaje)
         }
     }
 
@@ -44,8 +44,8 @@ class JuegosAdapter (private val context: Context,
 
     fun bindPokemon (holder: JuegosAdapterViewHolder, pokemon: Pokemon)
     {
-        holder.imgGameLogo?.setImageResource(pokemon.image)
-        holder.lblGameName?.text = pokemon.nombre
+        holder.ImgViaje?.setImageResource(pokemon.image)
+        holder.NombreViaje?.text = pokemon.nombre
     }
 
     override fun getItemCount(): Int {return pokemons.size}
