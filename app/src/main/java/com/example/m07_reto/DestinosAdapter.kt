@@ -26,14 +26,14 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
     }
 
     class DestinosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nombreTextView: TextView = itemView.findViewById(R.id.nombreTextView)
-        private val transporteTextView: TextView = itemView.findViewById(R.id.transporteTextView)
-       // private val imagenImageView: ImageView = itemView.findViewById(R.id.ImgViaje)
+        private val nombreTextView: TextView = itemView.findViewById(R.id.nombre)
+        private val transporteTextView: TextView = itemView.findViewById(R.id.transporte)
+        private val imagenImageView: ImageView = itemView.findViewById(R.id.imagen)
 
         fun bind(destino: Destinos) {
             nombreTextView.text = destino.nombre
             transporteTextView.text = destino.transporte
-            //imagenImageView.setImageResource(destino.imagen)
+            imagenImageView.setImageResource(destino.imagen)
         }
     }
 }

@@ -25,11 +25,9 @@ class lista : AppCompatActivity() {
 
             return preguntes
         }
-
+        val a = getViajes()
         val primeraLista = findViewById<RecyclerView>(R.id.ListaViajes)
 
-
-        val a = getViajes()
         val adaptador = DestinosAdapter(this, a)
         primeraLista.hasFixedSize()
         primeraLista.layoutManager = LinearLayoutManager(this)

@@ -5,26 +5,25 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/nombreTextView"
+        android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"/>
 
-  <!--  <ImageView
-        android:id="@+id/ImgViaje"
+    <ImageView
+        android:id="@+id/imagen"
         android:layout_width="190dp"
         android:layout_height="190dp"
-        android:layout_gravity="center"/> -->
-
+        android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/transporteTextView"
+        android:id="@+id/transporte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"/>
 
 </LinearLayout>

@@ -4,7 +4,7 @@ import java.io.Serializable
 
 class Destinos (val id: Int,
                 val nombre: String,
-                //val imagen: Int,
+                val imagen: Int,
                 val transporte: String,
                 val inicio: String,
                 val coordenadas_inicio:MutableList<coord>,
