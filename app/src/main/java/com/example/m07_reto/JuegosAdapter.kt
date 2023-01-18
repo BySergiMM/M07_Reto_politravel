@@ -22,10 +22,12 @@ class JuegosAdapter (private val context: Context,
     {
         var NombreViaje: TextView
         var ImgViaje: ImageView
+        var DiasViaje: TextView
 
         init{
             ImgViaje = view.findViewById(R.id.ImgViaje)
             NombreViaje = view.findViewById(R.id.NombreViaje)
+            DiasViaje = view.findViewById(R.id.DiasViaje)
         }
     }
 
@@ -46,6 +48,7 @@ class JuegosAdapter (private val context: Context,
     {
         holder.ImgViaje?.setImageResource(pokemon.image)
         holder.NombreViaje?.text = pokemon.nombre
+        holder.DiasViaje?.text = pokemon.dias
     }
 
     override fun getItemCount(): Int {return pokemons.size}
