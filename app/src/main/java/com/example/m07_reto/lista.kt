@@ -13,14 +13,14 @@ class lista : AppCompatActivity() {
         setContentView(R.layout.activity_lista)
 
         val Juegos = mutableListOf(
-            Pokemon("Viaje a la luna", R.drawable.logo, 1000000001),
-            Pokemon("Pokemon Go", R.drawable.logo, 1000000002),
-            Pokemon("Pokemon Rojo", R.drawable.logo, 1000000003),
-            Pokemon("Pokemon Rubi", R.drawable.logo, 1000000004),
-            Pokemon("Pokemon Negro", R.drawable.logo, 1000000005),
-            Pokemon("Pokemon Oro", R.drawable.logo, 1000000006),
-            Pokemon("Pokemon Espada", R.drawable.logo, 1000000007),
-            Pokemon("Pokemon Rubi Omega", R.drawable.logo, 1000000008))
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
+            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"))
 
         val lstJuegos = findViewById<RecyclerView>(R.id.LstJuegos)
 
