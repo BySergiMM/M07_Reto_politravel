@@ -6,6 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
+import com.google.gson.Gson
+import java.io.FileReader
 
 class lista : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +31,17 @@ class lista : AppCompatActivity() {
         lstJuegos.hasFixedSize()
         lstJuegos.layoutManager = LinearLayoutManager(this)
         lstJuegos.adapter = adaptador
+
+
+        fun getPreguntas(dificultad: String?, idioma: String): MutableList<Pregunta>
+        {
+            val jsonpathfile = "$filesDir/json/lista.json"
+            val jsonFile = FileReader(jsonpathfile)
+            val listpreguntas = object: TypeToken<MutableList<Pregunta>>() {}.type
+            val preguntes: MutableList<Pregunta> = Gson().fromJson(jsonFile, listpreguntas)
+
+            return preguntes
+        }
 
 
     }
