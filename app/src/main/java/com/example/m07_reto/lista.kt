@@ -15,34 +15,25 @@ class lista : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista)
 
-        val Juegos = mutableListOf(
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"),
-            Pokemon("Viaje a la luna", R.drawable.logo, "Dias: 5-7"))
 
-        val lstJuegos = findViewById<RecyclerView>(R.id.LstJuegos)
-
-        val adaptador = JuegosAdapter(this, Juegos)
-        lstJuegos.hasFixedSize()
-        lstJuegos.layoutManager = LinearLayoutManager(this)
-        lstJuegos.adapter = adaptador
-
-
-        fun getPreguntas(dificultad: String?, idioma: String): MutableList<Pregunta>
+        fun getViajes(): MutableList<Destinos>
         {
-            val jsonpathfile = "$filesDir/json/lista.json"
+            val jsonpathfile = getFilesDir().toString() + "/json/lista.json"
             val jsonFile = FileReader(jsonpathfile)
-            val listpreguntas = object: TypeToken<MutableList<Pregunta>>() {}.type
-            val preguntes: MutableList<Pregunta> = Gson().fromJson(jsonFile, listpreguntas)
+            val primeraLista = object: TypeToken<MutableList<Destinos>>() {}.type
+            val preguntes: MutableList<Destinos> = Gson().fromJson(jsonFile, primeraLista)
 
             return preguntes
         }
 
+        val primeraLista = findViewById<RecyclerView>(R.id.ListaViajes)
+
+
+        val a = getViajes()
+        val adaptador = DestinosAdapter(this, a)
+        primeraLista.hasFixedSize()
+        primeraLista.layoutManager = LinearLayoutManager(this)
+        primeraLista.adapter = adaptador
 
     }
 }
