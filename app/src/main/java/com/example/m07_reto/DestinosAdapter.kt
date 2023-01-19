@@ -11,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 
 class DestinosAdapter (private val context: Context, private val destinos: List<Destinos>)
-    : RecyclerView.Adapter<DestinosAdapter.DestinosViewHolder>() {
+    : RecyclerView.Adapter<DestinosAdapter.DestinosViewHolder>(), View.OnClickListener{
 
     private val layout = R.layout.item_lista
+    private var clickListener: View.OnClickListener? = null
 
     class DestinosViewHolder(val view: View): RecyclerView.ViewHolder(view){
         var nombre : TextView
@@ -28,6 +29,7 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DestinosViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
+        view.setOnClickListener(this)
         return DestinosViewHolder(view)
     }
 
@@ -44,8 +46,16 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
         holder.nombre?.text = destinos.nombre
         holder.transporte?.text = destinos.transporte
 
-        val paqueteruta = context.getFilesDir().toString() +"/img/"+ destinos.imagen
-        val bitmap = BitmapFactory.decodeFile(paqueteruta)
+        val ruta = context.getFilesDir().toString() +"/img/"+ destinos.imagen
+        val bitmap = BitmapFactory.decodeFile(ruta)
         holder.imagen?.setImageBitmap(bitmap)
     }
+
+    override fun onClick(view: View?){
+        clickListener?.onClick(view)
+    }
+    fun setOnClickListener(listener: View.OnClickListener){
+        clickListener = listener
+    }
+
 }

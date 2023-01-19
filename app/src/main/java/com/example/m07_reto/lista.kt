@@ -1,5 +1,6 @@
 package com.example.m07_reto
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -15,23 +16,27 @@ class lista : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista)
 
-
         fun getViajes(): MutableList<Destinos>
         {
             val jsonpathfile = getFilesDir().toString() + "/json/lista.json"
             val jsonFile = FileReader(jsonpathfile)
             val primeraLista = object: TypeToken<MutableList<Destinos>>() {}.type
             val preguntes: MutableList<Destinos> = Gson().fromJson(jsonFile, primeraLista)
-
             return preguntes
         }
-        val a = getViajes()
-        val primeraLista = findViewById<RecyclerView>(R.id.ListaViajes)
 
-        val adaptador = DestinosAdapter(this, a)
-        primeraLista.hasFixedSize()
-        primeraLista.layoutManager = LinearLayoutManager(this)
-        primeraLista.adapter = adaptador
+        val viajes = getViajes()
+        val ListaViaje = findViewById<RecyclerView>(R.id.ListaViajes)
+
+        val AdapterLista = DestinosAdapter(this, viajes)
+        ListaViaje.hasFixedSize()
+        ListaViaje.layoutManager = LinearLayoutManager(this)
+        ListaViaje.adapter = AdapterLista
+
+        AdapterLista.setOnClickListener(){
+            val intent = Intent(this, VerInfo::class.java)
+            startActivity(intent)
+        }
 
     }
 }

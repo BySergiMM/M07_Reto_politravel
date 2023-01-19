@@ -5,8 +5,11 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_gravity="center"
-    android:layout_marginTop="40dp"
-    android:background="@color/white">
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:paddingHorizontal="20dp"
+    android:background="@drawable/rounded_bg"
+    >
 
     <TextView
         android:id="@+id/nombre"
