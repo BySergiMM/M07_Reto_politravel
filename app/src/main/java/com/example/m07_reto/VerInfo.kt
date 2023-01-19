@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class VerInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,5 +30,15 @@ class VerInfo : AppCompatActivity() {
         Titulo.text = objeto.nombre
         Dias.text = objeto.dias.toString()
         Transporte.text = objeto.transporte
+
+        val listaItinerario = findViewById<Itinerari>(R.id.listaItinerario)
+
+
+        val AdapterIti = ItinerariAdapter(this, objeto.itinerario)
+        listaItinerario.hasFixedSize()
+        listaItinerario.layoutManager = LinearLayoutManager(this)
+        listaItinerario.adapter = AdapterIti
+
+
     }
 }
