@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 private lateinit var progressBar: ProgressBar
 private val delay: Long = 10000
 
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 progressBar.progress = 100 - (millisUntilFinished / 100).toInt()
             }
             override fun onFinish() {
-                finish()
+
                 val intent = Intent(this@MainActivity, lista::class.java)
                 startActivity(intent)
             }
@@ -34,9 +35,14 @@ class MainActivity : AppCompatActivity() {
         val pantalla = findViewById<View>(R.id.jueves)
 
         pantalla.setOnClickListener {
-            finish()
+            task.cancel()
             val intent = Intent(this, lista::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
     }
 }

@@ -39,6 +39,5 @@ class lista : AppCompatActivity() {
             intent.putExtra("objeto", a)
             startActivity(intent)
         }
-
     }
 }
