@@ -34,7 +34,9 @@ class lista : AppCompatActivity() {
         ListaViaje.adapter = AdapterLista
 
         AdapterLista.setOnClickListener(){
+            val a = viajes[ListaViaje.getChildAdapterPosition(it)]
             val intent = Intent(this, VerInfo::class.java)
+            intent.putExtra("objeto", a)
             startActivity(intent)
         }
 
