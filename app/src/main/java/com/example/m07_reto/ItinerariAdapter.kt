@@ -13,7 +13,7 @@ class ItinerariAdapter(
     private val itinerario: List<Itinerari>
     ) : RecyclerView.Adapter<ListaViewHolder>(), View.OnClickListener {
 
-    private val layout = R.layout.activity_ver_info
+    private val layout = R.layout.item_ver_lista
     private var clickListener: View.OnClickListener? = null
 
     class ListaViewHolder(val view: View) :
@@ -43,7 +43,7 @@ class ItinerariAdapter(
 
     fun bindCoordenada(holder: ListaViewHolder, itinerario: Itinerari) {
 
-        holder.dia?.text = "Dia " + itinerario.dia.toString() + ":"
+        holder.dia?.text = "Dia " + itinerario.dia.toString() + ":  "
         holder.infoDia?.text = itinerario.actividad
 
     }
