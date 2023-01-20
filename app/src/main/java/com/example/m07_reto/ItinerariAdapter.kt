@@ -12,9 +12,9 @@ class ItinerariAdapter(
     private val context: Context,
     private val itinerario: List<Itinerari>
     ) : RecyclerView.Adapter<ListaViewHolder>(), View.OnClickListener {
+
     private val layout = R.layout.activity_ver_info
     private var clickListener: View.OnClickListener? = null
-
 
     class ListaViewHolder(val view: View) :
         RecyclerView.ViewHolder(view) {
@@ -47,7 +47,6 @@ class ItinerariAdapter(
         holder.infoDia?.text = itinerario.actividad
 
     }
-
 
     override fun onClick(view: View?) {
         clickListener?.onClick(view)
