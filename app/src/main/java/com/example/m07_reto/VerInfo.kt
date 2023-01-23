@@ -40,11 +40,14 @@ class VerInfo : AppCompatActivity() {
         val listaItinerario = findViewById<RecyclerView>(R.id.listaItinerario)
 
         val AdapterIti = ItinerariAdapter(this, objeto.itinerario)
-        listaItinerario.hasFixedSize()
+//        listaItinerario.hasFixedSize()
+//        val layoutManager = CustomGridLayoutManager(this)
+//        layoutManager.setScrollEnabled(false)
+
         listaItinerario.layoutManager = LinearLayoutManager(this)
         listaItinerario.adapter = AdapterIti
 
-
+        listaItinerario.isNestedScrollingEnabled = false
 
     }
 }
