@@ -37,7 +37,7 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/DiasVer"
+            android:id="@+id/TransporteVer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,7 +46,25 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TransporteVer"
+            android:id="@+id/InicioVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/FinVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DiasVer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

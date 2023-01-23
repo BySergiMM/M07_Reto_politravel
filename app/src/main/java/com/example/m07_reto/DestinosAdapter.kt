@@ -17,9 +17,11 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
     private var clickListener: View.OnClickListener? = null
 
     class DestinosViewHolder(val view: View): RecyclerView.ViewHolder(view){
+
         var nombre : TextView
         var imagen : ImageView
         var transporte : TextView
+
         init {
             nombre = view.findViewById(R.id.nombre)
             imagen = view.findViewById(R.id.imagen)

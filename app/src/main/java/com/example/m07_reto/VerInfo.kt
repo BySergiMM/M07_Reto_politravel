@@ -21,6 +21,9 @@ class VerInfo : AppCompatActivity() {
         val Imagen2 = findViewById<ImageView>(R.id.ImagenVera)
         val Dias = findViewById<TextView>(R.id.DiasVer)
         val Transporte = findViewById<TextView>(R.id.TransporteVer)
+        val Inicio = findViewById<TextView>(R.id.InicioVer)
+        val Final = findViewById<TextView>(R.id.FinVer)
+
 
         val ruta = getFilesDir().toString() +"/img/"+ objeto.imagen
         val bitmap = BitmapFactory.decodeFile(ruta)
@@ -31,6 +34,8 @@ class VerInfo : AppCompatActivity() {
         Titulo.text = objeto.nombre
         Dias.text = objeto.dias.toString()
         Transporte.text = objeto.transporte
+        Inicio.text = objeto.inicio
+        Final.text = objeto.fin
 
         val listaItinerario = findViewById<RecyclerView>(R.id.listaItinerario)
 
