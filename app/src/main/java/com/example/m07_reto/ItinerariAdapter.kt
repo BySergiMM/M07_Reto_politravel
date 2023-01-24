@@ -10,10 +10,10 @@ import com.example.m07_reto.ItinerariAdapter.*
 
 class ItinerariAdapter(
     private val context: Context,
-    private val itinerario: List<Itinerari>
+    private val itinerario: List<ClaseItinerari>
     ) : RecyclerView.Adapter<ListaViewHolder>(), View.OnClickListener {
 
-    private val layout = R.layout.item_ver_lista
+    private val layout = R.layout.item_detalle_itinerario
     private var clickListener: View.OnClickListener? = null
 
     class ListaViewHolder(val view: View) :
@@ -41,7 +41,7 @@ class ItinerariAdapter(
         bindCoordenada(holder, dias)
     }
 
-    fun bindCoordenada(holder: ListaViewHolder, itinerario: Itinerari) {
+    fun bindCoordenada(holder: ListaViewHolder, itinerario: ClaseItinerari) {
 
         holder.dia?.text = "Dia " + itinerario.dia.toString() + ":  "
         holder.infoDia?.text = itinerario.actividad

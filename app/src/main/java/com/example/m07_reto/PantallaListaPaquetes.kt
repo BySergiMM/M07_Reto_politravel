@@ -11,18 +11,33 @@ import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflec
 import com.google.gson.Gson
 import java.io.FileReader
 
-class lista : AppCompatActivity() {
+class PantallaListaPaquetes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lista)
+        setContentView(R.layout.activity_lista_paquetes)
 
-        fun getViajes(): MutableList<Destinos>
+        fun getViajes(): MutableList<ClaseDestinos>
         {
             val jsonpathfile = getFilesDir().toString() + "/json/lista.json"
             val jsonFile = FileReader(jsonpathfile)
-            val primeraLista = object: TypeToken<MutableList<Destinos>>() {}.type
-            val preguntes: MutableList<Destinos> = Gson().fromJson(jsonFile, primeraLista)
+            val primeraLista = object: TypeToken<MutableList<ClaseDestinos>>() {}.type
+            val preguntes: MutableList<ClaseDestinos> = Gson().fromJson(jsonFile, primeraLista)
             return preguntes
+        }
+        val transporte: TextView = findViewById(R.id.transporte)
+        val imgdias: ImageView = findViewById(R.id.imagendias)
+        val imgtrp: ImageView = findViewById(R.id.imagentransporte)
+
+
+        if (transporte.text == "Avion")
+        {
+            imgtrp.setImageResource(R.drawable.avion)
+        } else if (transporte.text == "Barco")
+        {
+            imgtrp.setImageResource(R.drawable.barco)
+        } else if (transporte.text == "Coche")
+        {
+            imgtrp.setImageResource(R.drawable.coche)
         }
 
         val viajes = getViajes()
@@ -35,7 +50,7 @@ class lista : AppCompatActivity() {
 
         AdapterLista.setOnClickListener(){
             val a = viajes[ListaViaje.getChildAdapterPosition(it)]
-            val intent = Intent(this, VerInfo::class.java)
+            val intent = Intent(this, PantallaDetalle::class.java)
             intent.putExtra("objeto", a)
             startActivity(intent)
         }

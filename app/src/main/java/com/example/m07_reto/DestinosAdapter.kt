@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
-class DestinosAdapter (private val context: Context, private val destinos: List<Destinos>)
+class DestinosAdapter (private val context: Context, private val destinos: List<ClaseDestinos>)
     : RecyclerView.Adapter<DestinosAdapter.DestinosViewHolder>(), View.OnClickListener{
 
-    private val layout = R.layout.item_lista
+    private val layout = R.layout.item_paquete
     private var clickListener: View.OnClickListener? = null
 
     class DestinosViewHolder(val view: View): RecyclerView.ViewHolder(view){
@@ -21,11 +20,13 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
         var nombre : TextView
         var imagen : ImageView
         var transporte : TextView
+        var dias : TextView
 
         init {
             nombre = view.findViewById(R.id.nombre)
             imagen = view.findViewById(R.id.imagen)
             transporte = view.findViewById(R.id.transporte)
+            dias = view.findViewById(R.id.dias)
         }
     }
 
@@ -44,9 +45,10 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
         bind(holder, destino)
     }
 
-    fun bind(holder: DestinosViewHolder, destinos: Destinos) {
+    fun bind(holder: DestinosViewHolder, destinos: ClaseDestinos) {
         holder.nombre?.text = destinos.nombre
         holder.transporte?.text = destinos.transporte
+        holder.dias?.text = destinos.dias.toString()
 
         val ruta = context.getFilesDir().toString() +"/img/"+ destinos.imagen
         val bitmap = BitmapFactory.decodeFile(ruta)

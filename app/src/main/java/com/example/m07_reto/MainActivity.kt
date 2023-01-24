@@ -1,6 +1,5 @@
 package com.example.m07_reto
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -16,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_inicio)
 
         progressBar = findViewById(R.id.progressbar)
         progressBar.progress = 0
@@ -27,16 +26,16 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onFinish() {
 
-                val intent = Intent(this@MainActivity, lista::class.java)
+                val intent = Intent(this@MainActivity, PantallaListaPaquetes::class.java)
                 startActivity(intent)
             }
         }.start()
 
-        val pantalla = findViewById<View>(R.id.jueves)
+        val Pantalla = findViewById<View>(R.id.pantalla)
 
-        pantalla.setOnClickListener {
+        Pantalla.setOnClickListener {
             task.cancel()
-            val intent = Intent(this, lista::class.java)
+            val intent = Intent(this, PantallaListaPaquetes::class.java)
             startActivity(intent)
         }
     }
