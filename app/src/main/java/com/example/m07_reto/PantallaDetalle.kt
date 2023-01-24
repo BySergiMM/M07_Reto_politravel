@@ -23,7 +23,7 @@ class PantallaDetalle : AppCompatActivity() {
         val Transporte = findViewById<TextView>(R.id.TransporteVer)
         val Inicio = findViewById<TextView>(R.id.InicioVer)
         val Final = findViewById<TextView>(R.id.FinVer)
-        val FtoTransporte: ImageView = findViewById(R.id.transporte)
+        val FtoTransporte = findViewById<ImageView>(R.id.transporte)
 
 
         val ruta = getFilesDir().toString() +"/img/"+ objeto.imagen

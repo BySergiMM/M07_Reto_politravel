@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
+    android:gravity="center"
     android:background="@color/azul">
 
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ListaViajes"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#006ADC"
-        android:gravity="center"
-        android:text="POLITRAVEL"
-        android:textColor="#000000"
-        android:textSize="48sp"
-        android:textStyle="bold" />
+        android:layout_marginLeft="15dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+    <ImageView
+        android:id="@+id/btnAnyadir"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="600dp"
+        android:src="@drawable/anadir" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ListaViajes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

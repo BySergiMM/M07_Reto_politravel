@@ -5,4 +5,7 @@
         <item name="android:progressDrawable">@drawable/custom_progress</item>
         <item name="android:indeterminateDrawable">@drawable/custom_progress</item>
     </style>
+    <style name="RoundTopCornersImageViewStyle">
+        <item name="android:background">@drawable/round_top_corners_image_view_bg</item>
+    </style>
 </resources>

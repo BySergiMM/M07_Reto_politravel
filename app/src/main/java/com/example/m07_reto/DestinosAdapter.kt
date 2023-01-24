@@ -25,7 +25,7 @@ class DestinosAdapter (private val context: Context, private val destinos: List<
         init {
             nombre = view.findViewById(R.id.nombre)
             imagen = view.findViewById(R.id.imagen)
-            transporte = view.findViewById(R.id.transporte)
+            transporte = view.findViewById(R.id.transportepaquet)
             dias = view.findViewById(R.id.dias)
         }
     }
