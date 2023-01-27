@@ -7,6 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class PantallaDetalle : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +22,6 @@ class PantallaDetalle : AppCompatActivity() {
 
         var Titulo = findViewById<TextView>(R.id.TituloVer)
         val Imagen = findViewById<ImageView>(R.id.ImagenVer)
-        val Imagen2 = findViewById<ImageView>(R.id.ImagenVera)
         val Dias = findViewById<TextView>(R.id.DiasVer)
         val Transporte = findViewById<TextView>(R.id.TransporteVer)
         val Inicio = findViewById<TextView>(R.id.InicioVer)
@@ -33,7 +36,6 @@ class PantallaDetalle : AppCompatActivity() {
         val bitmap = BitmapFactory.decodeFile(ruta)
 
         Imagen?.setImageBitmap(bitmap)
-        Imagen2?.setImageBitmap(bitmap)
 
         Titulo.text = objeto.nombre
         Dias.text = objeto.dias.toString()
@@ -44,6 +46,9 @@ class PantallaDetalle : AppCompatActivity() {
         latitud.text = objeto.Coordenadas.latitud
         longitud.text = objeto.Coordenadas.longitud
 
+        var latitudMaps = objeto.Coordenadas.latitud.toDouble()
+        var longitudMaps = objeto.Coordenadas.longitud.toDouble()
+
         if (Transporte.text == "Avion")
         {
             FtoTransporte.setImageResource(R.drawable.avion)
@@ -53,6 +58,20 @@ class PantallaDetalle : AppCompatActivity() {
         } else if (Transporte.text == "Coche")
         {
             FtoTransporte.setImageResource(R.drawable.coche)
+        }
+
+
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync { googleMap ->
+            //Posición inicial del mapa
+            val latLng = LatLng(latitudMaps, longitudMaps)
+            val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10f)
+            googleMap.moveCamera(cameraUpdate)
+            //Agregando marcador en la posicion
+            googleMap.addMarker(MarkerOptions().position(latLng))
+            //Habilitando los controles de zoom
+            googleMap.uiSettings.isZoomControlsEnabled = true
         }
 
 

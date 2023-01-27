@@ -171,6 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:textColor="#000000"
             android:textSize="25sp"
@@ -184,7 +185,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="40dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -194,15 +195,15 @@
                 android:id="@+id/latitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="7dp"
                 android:textColor="#000000"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -212,17 +213,25 @@
                 android:id="@+id/longitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="7dp"
                 android:textColor="#000000"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/ImagenVera"
-            android:layout_width="300dp"
-            android:layout_height="202dp"
-            android:layout_gravity="center" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="300dp"
+                android:layout_height="300dp"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
