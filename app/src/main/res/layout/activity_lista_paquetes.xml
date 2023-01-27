@@ -6,18 +6,29 @@
     android:gravity="center"
     android:background="@color/azul">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006ADC"
+        android:gravity="center"
+        android:text="@string/politravel"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ListaViajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="65dp" />
 
     <ImageView
         android:id="@+id/btnAnyadir"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="650dp"
         android:src="@drawable/anadir" />
 
 </RelativeLayout>
