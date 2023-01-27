@@ -7,7 +7,7 @@ class ClaseDestinos (val id: Int,
                      val imagen: String,
                      val transporte: String,
                      val inicio: String,
-                     val coordenadas_inicio:MutableList<Coordenadas>,
+                     val Coordenadas:Coordenadas,
                      val fin: String,
                      val dias: Int,
                      val itinerario: MutableList<ClaseItinerari>) : Serializable

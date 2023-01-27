@@ -25,6 +25,9 @@ class PantallaDetalle : AppCompatActivity() {
         val Final = findViewById<TextView>(R.id.FinVer)
         val FtoTransporte = findViewById<ImageView>(R.id.transporte)
 
+        val latitud = findViewById<TextView>(R.id.latitud)
+        val longitud = findViewById<TextView>(R.id.longitud)
+
 
         val ruta = getFilesDir().toString() +"/img/"+ objeto.imagen
         val bitmap = BitmapFactory.decodeFile(ruta)
@@ -37,6 +40,9 @@ class PantallaDetalle : AppCompatActivity() {
         Transporte.text = objeto.transporte
         Inicio.text = objeto.inicio
         Final.text = objeto.fin
+
+        latitud.text = objeto.Coordenadas.latitud
+        longitud.text = objeto.Coordenadas.longitud
 
         if (Transporte.text == "Avion")
         {
