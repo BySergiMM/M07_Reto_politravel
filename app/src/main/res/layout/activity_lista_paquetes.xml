@@ -20,15 +20,15 @@
         android:id="@+id/ListaViajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="65dp" />
 
     <ImageView
         android:id="@+id/btnAnyadir"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginStart="280sp"
+        android:layout_marginTop="650sp"
         android:src="@drawable/anadir" />
 
 </RelativeLayout>

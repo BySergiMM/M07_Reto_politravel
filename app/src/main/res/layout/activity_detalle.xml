@@ -47,13 +47,13 @@
                 android:id="@+id/transporte"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="80dp" />
+                android:layout_marginStart="80sp" />
 
             <TextView
                 android:id="@+id/TransporteVer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="40sp"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -69,13 +69,13 @@
                 android:layout_width="50dp"
                 android:layout_height="45dp"
                 android:src="@drawable/inicio"
-                android:layout_marginStart="80dp" />
+                android:layout_marginStart="80sp" />
 
             <TextView
                 android:id="@+id/InicioVer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="40sp"
                 android:layout_gravity="center"
                 android:textColor="#000000"
                 android:textSize="25sp"
@@ -92,13 +92,13 @@
                 android:layout_width="50dp"
                 android:layout_height="45dp"
                 android:src="@drawable/destino"
-                android:layout_marginStart="80dp" />
+                android:layout_marginStart="80sp" />
 
             <TextView
                 android:id="@+id/FinVer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="40sp"
                 android:layout_gravity="center"
                 android:textColor="#000000"
                 android:textSize="25sp"
@@ -121,7 +121,7 @@
                 android:id="@+id/DiasVer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="40sp"
                 android:layout_gravity="center"
                 android:textColor="#000000"
                 android:textSize="25sp"
@@ -132,7 +132,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="30sp"
             android:layout_gravity="center"
             android:textColor="#000000"
             android:textSize="25sp"
@@ -141,7 +141,7 @@
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="5dp"
+            android:layout_height="5sp"
             android:background="@drawable/separador"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
@@ -170,8 +170,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="25sp"
+            android:layout_marginBottom="10sp"
             android:layout_gravity="center"
             android:textColor="#000000"
             android:textSize="25sp"
@@ -185,7 +185,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="40sp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -195,7 +195,7 @@
                 android:id="@+id/latitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="7sp"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -203,7 +203,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="10sp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -213,7 +213,7 @@
                 android:id="@+id/longitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="7sp"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
