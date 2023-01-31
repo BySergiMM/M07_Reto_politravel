@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="308dp"
             android:layout_height="260dp"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="55dp"
             android:layout_marginTop="300dp"
             android:background="@drawable/logo" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="240sp"
-                android:layout_marginStart="60sp"
+                android:layout_marginStart="50sp"
                 android:gravity="center"
                 android:text="@string/eslogan"
                 android:textColor="@color/black"
@@ -51,8 +51,8 @@
             style="@style/CustomProgressBar"
             android:layout_width="300dp"
             android:layout_height="31dp"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="800dp" />
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="750dp" />
 
     </RelativeLayout>
 </LinearLayout>
