@@ -62,8 +62,8 @@ class PantallaDetalle : AppCompatActivity() {
 
 //-------------------------------------      MAPS       ---------------------------------------//
 
-        var latitudMaps = objeto.Coordenadas.latitud.toDouble()
-        var longitudMaps = objeto.Coordenadas.longitud.toDouble()
+        val latitudMaps = objeto.Coordenadas.latitud.toDouble()
+        val longitudMaps = objeto.Coordenadas.longitud.toDouble()
 
 
         val mapFragment = supportFragmentManager

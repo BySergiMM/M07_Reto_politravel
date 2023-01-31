@@ -16,38 +16,43 @@
         <ImageView
             android:layout_width="308dp"
             android:layout_height="260dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="300dp"
             android:background="@drawable/logo" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24sp"
-            android:layout_marginTop="85sp"
+            android:layout_marginTop="100sp"
             android:gravity="center"
-            android:text="POLITRAVEL"
+            android:text="@string/politravel"
             android:textColor="#000000"
             android:textSize="60sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45sp"
-            android:layout_marginTop="190sp"
-            android:gravity="center"
-            android:text="@string/eslogan"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240sp"
+                android:layout_marginStart="60sp"
+                android:gravity="center"
+                android:text="@string/eslogan"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
+
 
         <ProgressBar
             android:id="@+id/progressbar"
             style="@style/CustomProgressBar"
             android:layout_width="300dp"
             android:layout_height="31dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="650dp" />
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="800dp" />
 
     </RelativeLayout>
 </LinearLayout>
