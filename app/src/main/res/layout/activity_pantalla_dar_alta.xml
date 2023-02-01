@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaDarAlta"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006ADC"
+        android:gravity="center"
+        android:text="@string/politravel"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apaquete"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/destAlta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introdueix el destí del nou paquet"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <ImageView
+        android:id="@+id/fotoAlta"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:hint="Introdueix el destí del nou paquet"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="16dp"
+        />
+
+    <EditText
+        android:id="@+id/iniciALta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introdueix l'inici del recorregut del nou paquet"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <EditText
+        android:id="@+id/fiAlta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introdueix el final del recorregut del nou paquet"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        />
+    <EditText
+        android:id="@+id/diesAlta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introdueix els dies que durara viatge del nou paquet"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/btn_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Paquete"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

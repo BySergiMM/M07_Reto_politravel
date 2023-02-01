@@ -36,10 +36,9 @@ class PantallaListaPaquetes : AppCompatActivity() {
 //----------------------------------       BTN AÑADIR       --------------------------------------//
 
         val fab: View = findViewById(R.id.btnAnyadir)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
+        fab.setOnClickListener(){
+            val intent = Intent(this, PantallaDarAlta::class.java)
+            startActivity(intent)
         }
     }
 
