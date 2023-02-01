@@ -27,8 +27,9 @@
         android:id="@+id/btnAnyadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="310sp"
-        android:layout_marginTop="750sp"
-        android:src="@drawable/anadir" />
+        android:layout_marginStart="330sp"
+        android:layout_marginTop="770sp"
+        android:backgroundTint="#006ADC"
+        android:src="@drawable/anadir"/>
 
 </RelativeLayout>
