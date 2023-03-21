@@ -23,7 +23,7 @@
         android:layout_marginTop="600dp"
         android:text="Politravel"
         android:textColor="@android:color/white"
-        android:textSize="36sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:fontFamily="serif"/>
 
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:text="Explora y reserva tus viajes soñados"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:fontFamily="serif"/>
 
 </RelativeLayout>

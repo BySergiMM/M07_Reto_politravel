@@ -8,6 +8,19 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val myImageView: ImageView by lazy { findViewById<ImageView>(R.id.myImageView) }
+    private val imageList = listOf(R.drawable.desierto, R.drawable.playa, R.drawable.montana)
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        startImageTimer()
+
+    }
+
 
     private fun startImageTimer() {
         val handler = Handler()
@@ -23,15 +36,4 @@ class MainActivity : AppCompatActivity() {
         }, 0, 3000)
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
-        val myImageView = findViewById<ImageView>(R.id.myImageView)
-        val imageList = listOf(R.drawable.desierto, R.drawable.playa, R.drawable.montanas)
-
-        startImageTimer()
-    }
 }
