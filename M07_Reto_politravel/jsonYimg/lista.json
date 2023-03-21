@@ -1,0 +1,179 @@
+[
+	{
+		"id": 1,
+		"nombre": "Aventura en las Montanas",
+		"imagen": "montanas.png",
+		"transporte": "Avion",
+		"inicio": "Nueva York",
+		"Coordenadas": 
+			{
+				"latitud": "40.730610",
+				"longitud": "-73.935242"
+			},
+		
+		"fin": "Denver",
+		"dias": 7,
+		"itinerario": [
+			{
+				"dia": 1,
+				"actividad": "Vuelo desde Nueva York a Denver"
+			},
+			{
+				"dia": 2,
+				"actividad": "Check-in en el hotel y tiempo libre para explorar la ciudad"
+			},
+			{
+				"dia": 3,
+				"actividad": "Excursion de esqui en las montanas cercanas"
+			},
+			{
+				"dia": 4,
+				"actividad": "Excursion de raquetas de nieve y caminata en un parque nacional"
+			},
+			{
+				"dia": 5,
+				"actividad": "Dia libre para actividades opcionales como bano termal o esqui nocturno"
+			},
+			{
+				"dia": 6,
+				"actividad": "Visita a una destileria de whiskey local"
+			},
+			{
+				"dia": 7,
+				"actividad": "Vuelo de regreso a Nueva York"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"nombre": "Playa tropical",
+		"imagen": "playa.png",
+		"transporte": "Avion",
+		"inicio": "Chicago",
+		"Coordenadas": 
+			{
+				"latitud": "41.8755616",
+				"longitud": "-87.6244212"
+			},
+		"fin": "Cancun",
+		"dias": 7,
+		"itinerario": [
+			{
+				"dia": 1,
+				"actividad": "Vuelo desde Chicago a Cancun"
+			},
+			{
+				"dia": 2,
+				"actividad": "Check-in en el hotel y tiempo libre para explorar la zona"
+			},
+			{
+				"dia": 3,
+				"actividad": "Dia libre para relajarse en la playa"
+			},
+			{
+				"dia": 4,
+				"actividad": "Excursion de snorkeling en el arrecife de coral"
+			},
+			{
+				"dia": 5,
+				"actividad": "Visita a una ruinas mayas cercanas"
+			},
+			{
+				"dia": 6,
+				"actividad": "Dia libre para actividades opcionales como buceo o paseo en lancha"
+			},
+			{
+				"dia": 7,
+				"actividad": "Vuelo de regreso a Chicago"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"nombre": "Aventuras en la naturaleza",
+		"imagen": "aventura.png",
+		"transporte": "Coche",
+		"inicio": "Seattle",
+		"Coordenadas": 
+			{
+				"latitud": "47.6062",
+				"longitud": "-122.3321"
+			},
+		"fin": "Yellowstone",
+		"dias": 7,
+		"itinerario": [
+			{
+				"dia": 1,
+				"actividad": "Salida desde Seattle en auto hacia Yellowstone"
+			},
+			{
+				"dia": 2,
+				"actividad": "Check-in en el campamento y caminata para ver alces y bufalos"
+			},
+			{
+				"dia": 3,
+				"actividad": "Excursion en bicicleta por el parque y visite a Old Faithful"
+			},
+			{
+				"dia": 4,
+				"actividad": "Rafting en el rio Snake"
+			},
+			{
+				"dia": 5,
+				"actividad": "Dia libre para actividades opcionales como senderismo o pesca"
+			},
+			{
+				"dia": 6,
+				"actividad": "Visita a un geyser y termas calientes"
+			},
+			{
+				"dia": 7,
+				"actividad": "Regreso a Seattle en auto"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"nombre": "Gastronomoa y cultura en Italia",
+		"imagen": "Italia.png",
+		"transporte": "Avion",
+		"inicio": "Roma",
+		"Coordenadas": 
+			{
+				"latitud": "41.894802",
+				"longitud": "12.485338"
+			},
+		"fin": "Roma",
+		"dias": 7,
+		"itinerario": [
+			{
+				"dia": 1,
+				"actividad": "Llegada a Roma y check-in en el hotel"
+			},
+			{
+				"dia": 2,
+				"actividad": "Visita guiada por el Coliseo y el Foro Romano"
+			},
+			{
+				"dia": 3,
+				"actividad": "Excursion a la Toscana para degustar vinos y comida local"
+			},
+			{
+				"dia": 4,
+				"actividad": "Visita a la ciudad de Florencia y el Museo Uffizi"
+			},
+			{
+				"dia": 5,
+				"actividad": "Excursion a la ciudad de Pisa y visite la Torre inclinada"
+			},
+			{
+				"dia": 6,
+				"actividad": "Clase de cocina italiana para aprender a hacer pasta casera y pizza"
+			},
+			{
+				"dia": 7,
+				"actividad": "Dia libre para explorar la ciudad y hacer compras antes del vuelo de regreso"
+			}
+		]
+	}
+]
