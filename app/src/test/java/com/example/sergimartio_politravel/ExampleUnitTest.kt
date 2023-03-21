@@ -1,4 +1,4 @@
-package com.example.politravelsergi
+package com.example.sergimartio_politravel
 
 import org.junit.Test
 

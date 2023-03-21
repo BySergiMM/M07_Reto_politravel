@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.politravelsergi'
+    namespace 'com.example.sergimartio_politravel'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.politravelsergi"
+        applicationId "com.example.sergimartio_politravel"
         minSdk 24
         targetSdk 33
         versionCode 1
