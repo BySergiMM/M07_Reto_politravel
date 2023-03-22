@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_avion.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/avion.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_anadir.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/anadir.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_subirimg.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/subirimg.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_barco.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/barco.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_activity_lista_paquetes.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/activity_lista_paquetes.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_round_top_corners_image_view_bg.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/round_top_corners_image_view_bg.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_item_detalle_itinerario.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/item_detalle_itinerario.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.m07_reto.app-pngs-27:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_item_paquete.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/item_paquete.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_activity_detalle.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/activity_detalle.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_activity_inicio.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/activity_inicio.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_rounded_bg.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/rounded_bg.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/xml_backup_rules.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_logo.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/logo.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_separador.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/separador.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_rounded_linea.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/rounded_linea.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_destino.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/destino.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_inicio.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/inicio.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_duracion.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/duracion.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/layout_activity_pantalla_dar_alta.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/layout/activity_pantalla_dar_alta.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_coche.png.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/coche.png"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/drawable_custom_progress.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/drawable/custom_progress.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.m07_reto.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.m07_reto.app-merged_res-32:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.m07_reto.app-main-34:/mipmap-hdpi/ic_launcher.webp"
+    }
+]

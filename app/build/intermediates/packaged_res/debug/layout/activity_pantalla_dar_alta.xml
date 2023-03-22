@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul"
+    android:orientation="vertical"
+    tools:context=".PantallaDarAlta">
+
+    <!-- titulo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006ADC"
+        android:gravity="center"
+        android:text="@string/politravel"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <!-- subtitulo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/apaquete"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- nombre paquete -->
+    <EditText
+        android:id="@+id/aNombrePaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/nombreP"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- foto paquete -->
+    <ImageView
+        android:id="@+id/aFotoPaquete"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/subirimg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="match_parent"
+            android:text="@string/etransporte"
+            android:textColor="@color/gris"
+            android:textSize="16sp"
+            android:layout_marginStart="3dp"/>
+
+        <!-- Transporte paquete -->
+        <Spinner
+            android:id="@+id/aTransportePaquete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/introduce_el_medio_de_transporte"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black" />
+
+    </LinearLayout>
+
+
+    <!-- Inicio paquete -->
+    <EditText
+        android:id="@+id/aInicioPaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/introduce_el_inicio_del_recorrido"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- Final paquete -->
+    <EditText
+        android:id="@+id/aFinalPaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/introduce_el_final_del_recorrido"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- coords paquete -->
+    <EditText
+        android:id="@+id/aCordsLatPaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/introduce_las_cordenadas_del_punto_inicial"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- coords paquete -->
+    <EditText
+        android:id="@+id/aCordsLonPaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/introduce_las_cordenadas_del_punto_final"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- Num Dias paquete -->
+    <EditText
+        android:id="@+id/aDiasPaquete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/introduce_los_d_as_que_durara_viaje"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- Itinerario paquete -->
+    <EditText
+        android:id="@+id/aItinerario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Dia 1, Dia2 Dia 3"
+        android:textColorHint="@color/gris"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
+
+    <!-- BTN añadir paquete -->
+    <Button
+        android:id="@+id/aButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="16dp"
+        android:background="#006ADC"
+        android:text="@string/añadirpaquete"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/azul"
+    android:id="@+id/pantalla">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="308dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100sp"
+            android:gravity="center"
+            android:text="@string/politravel"
+            android:textColor="#000000"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240sp"
+                android:layout_marginStart="50sp"
+                android:gravity="center"
+                android:text="@string/eslogan"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="@style/CustomProgressBar"
+            android:layout_width="300dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="750dp" />
+
+    </RelativeLayout>
+</LinearLayout>
