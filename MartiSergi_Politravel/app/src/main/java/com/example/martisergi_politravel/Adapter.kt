@@ -2,8 +2,10 @@ package com.example.martisergi_politravel
 
 
 import android.annotation.SuppressLint
+import android.content.Context
 
 import android.content.res.Resources
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +14,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class Adapter(
+class Adapter(private val context: Context,
     val itemList: List<TravelPackage>,
     private val resources: Resources,
     val listener: OnItemClickListener
@@ -31,6 +33,7 @@ class Adapter(
         val nombre: TextView = view.findViewById(R.id.nombre)
         var pais: TextView = view.findViewById(R.id.pais)
         val precio: TextView = view.findViewById(R.id.precio)
+        val img: ImageView = view.findViewById(R.id.imagenCarta)
         override fun onClick(p0: View?) {
             listener.onItemClick(itemList[position])
         }
@@ -47,8 +50,6 @@ class Adapter(
         holder.nombre.text = cardElement.nombre
         holder.precio.text = cardElement.precio.toString()
         holder.pais.text = cardElement.pais
-
-        val country = cardElement.pais.toLowerCase(Locale.ROOT).replace(" ", "")
 
         holder.itemView.setOnClickListener {
 

@@ -14,7 +14,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_paquetes)
 
-
         val gson = Gson()
         val packages = gson.fromJson(
             File(this.filesDir, "json/infoViajes.json").readText(),

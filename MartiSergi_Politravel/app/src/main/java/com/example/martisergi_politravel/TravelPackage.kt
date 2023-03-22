@@ -6,6 +6,7 @@ data class TravelPackage(
     val id: Int,
     val nombre: String,
     val pais: String,
+    val img: String,
     val lugaresInteresantes: Array<String>,
     val puntuacion: Double,
     val precio: Int,
