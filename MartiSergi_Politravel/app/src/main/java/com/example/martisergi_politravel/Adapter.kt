@@ -14,8 +14,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class Adapter(private val context: Context,
-    val itemList: List<TravelPackage>,
+class Adapter(val itemList: List<TravelPackage>,
     private val resources: Resources,
     val listener: OnItemClickListener
 ) : RecyclerView.Adapter<Adapter.MyViewHolder>() {
