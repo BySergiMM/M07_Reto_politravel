@@ -27,8 +27,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         recyclerView.layoutManager = layoutManager
         val adapter = Adapter(packages, resources, this)
         recyclerView.adapter = adapter
-
-
     }
 
     override fun onItemClick(item: TravelPackage) {

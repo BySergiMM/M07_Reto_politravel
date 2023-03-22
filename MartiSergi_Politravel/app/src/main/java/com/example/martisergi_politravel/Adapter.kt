@@ -30,7 +30,7 @@ class Adapter(
 
         val cityName: TextView = view.findViewById(R.id.cityName)
         var countryName: TextView = view.findViewById(R.id.countryName)
-        val rating: TextView = view.findViewById(R.id.rating)
+        val price: TextView = view.findViewById(R.id.price)
         override fun onClick(p0: View?) {
             listener.onItemClick(itemList[position])
         }
@@ -45,7 +45,7 @@ class Adapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val cardElement = itemList[position]
         holder.cityName.text = cardElement.name
-        holder.rating.text = cardElement.rating.toString()
+        holder.price.text = cardElement.price.toString()
         holder.countryName.text = cardElement.country
 
         val country = cardElement.country.toLowerCase(Locale.ROOT).replace(" ", "")
