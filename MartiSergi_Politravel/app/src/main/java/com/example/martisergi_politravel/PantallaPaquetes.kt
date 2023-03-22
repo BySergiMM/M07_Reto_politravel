@@ -10,7 +10,6 @@ import com.google.gson.Gson
 import java.io.File
 
 class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_paquetes)
@@ -18,7 +17,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
 
         val gson = Gson()
         val packages = gson.fromJson(
-            File(this.filesDir, "json/packages.json").readText(),
+            File(this.filesDir, "json/infoViajes.json").readText(),
             Array<TravelPackage>::class.java
         ).toList()
         val resources = this.resources
@@ -33,33 +32,33 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         val i = Intent(this, MainActivity::class.java)
 
         val id: Int = item.id
-        val name: String = item.name
-        val country: String = item.country
-        val interestingPlaces: Array<String> = item.interestingPlaces
-        val rating: Double = item.rating
-        val price: Int = item.price
-        val description: String = item.description
-        val duration: Int = item.duration
-        val conveyance: String = item.conveyance
-        val tourStartName: String = item.tourStartName
-        val tourEndName: String = item.tourEndName
-        val tourStartCoord: Array<Double> = item.tourStartCoord
-        val tourEndCoord: Array<Double> = item.tourEndCoord
+        val nombre: String = item.nombre
+        val pais: String = item.pais
+        val lugaresInteresantes: Array<String> = item.lugaresInteresantes
+        val puntuacion: Double = item.puntuacion
+        val precio: Int = item.precio
+        val descripcion: String = item.descripcion
+        val duración: Int = item.duración
+        val transporte: String = item.transporte
+        val inicioTourNombre: String = item.inicioTourNombre
+        val finTourNombre: String = item.finTourNombre
+        val inicioTourCoordenadas: Array<Double> = item.inicioTourCoordenadas
+        val finTourCoordenadas: Array<Double> = item.finTourCoordenadas
 
 
         i.putExtra("id", id)
-        i.putExtra("name", name)
-        i.putExtra("country", country)
-        i.putExtra("interestingPlaces", interestingPlaces)
-        i.putExtra("rating", rating)
-        i.putExtra("price", price)
-        i.putExtra("description", description)
-        i.putExtra("duration", duration)
-        i.putExtra("conveyance", conveyance)
-        i.putExtra("tourStartName", tourStartName)
-        i.putExtra("tourEndName", tourEndName)
-        i.putExtra("tourStartCoord", tourStartCoord)
-        i.putExtra("tourEndCoord", tourEndCoord)
+        i.putExtra("nombre", nombre)
+        i.putExtra("pais", pais)
+        i.putExtra("lugaresInteresantes", lugaresInteresantes)
+        i.putExtra("puntuacion", puntuacion)
+        i.putExtra("precio", precio)
+        i.putExtra("descripcion", descripcion)
+        i.putExtra("duración", duración)
+        i.putExtra("transporte", transporte)
+        i.putExtra("inicioTourNombre", inicioTourNombre)
+        i.putExtra("finTourNombre", finTourNombre)
+        i.putExtra("inicioTourCoordenadas", inicioTourCoordenadas)
+        i.putExtra("finTourCoordenadas", finTourCoordenadas)
 
         this.startActivity(i)
     }

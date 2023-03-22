@@ -35,7 +35,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/precio"
         android:layout_width="40sp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45sp"
@@ -52,7 +52,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/cityName"
+        android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -60,7 +60,7 @@
         android:gravity="start"
         android:text="Barcelona"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <ImageView
@@ -71,14 +71,14 @@
         android:src="@drawable/maps"/>
 
     <TextView
-        android:id="@+id/countryName"
+        android:id="@+id/pais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60sp"
-        android:layout_marginTop="240sp"
+        android:layout_marginTop="237sp"
         android:text="Spain"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="27sp"
         android:textStyle="bold" />
 
     <ImageView

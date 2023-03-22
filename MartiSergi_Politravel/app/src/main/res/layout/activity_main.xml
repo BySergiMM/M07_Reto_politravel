@@ -13,14 +13,6 @@
         android:layout_height="match_parent"
         android:src="@drawable/desierto"
         android:scaleType="centerCrop" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:alpha="0.2"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/black" />
-
     <TextView
         android:id="@+id/tv_politravel"
         android:layout_width="wrap_content"
@@ -45,5 +37,15 @@
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:fontFamily="serif"/>
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:alpha="0.2"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/black" />
+
+
+
 
 </RelativeLayout>

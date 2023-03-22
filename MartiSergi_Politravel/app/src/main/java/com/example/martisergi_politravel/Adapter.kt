@@ -28,9 +28,9 @@ class Adapter(
             itemView.setOnClickListener(this)
         }
 
-        val cityName: TextView = view.findViewById(R.id.cityName)
-        var countryName: TextView = view.findViewById(R.id.countryName)
-        val price: TextView = view.findViewById(R.id.price)
+        val nombre: TextView = view.findViewById(R.id.nombre)
+        var pais: TextView = view.findViewById(R.id.pais)
+        val precio: TextView = view.findViewById(R.id.precio)
         override fun onClick(p0: View?) {
             listener.onItemClick(itemList[position])
         }
@@ -44,11 +44,11 @@ class Adapter(
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val cardElement = itemList[position]
-        holder.cityName.text = cardElement.name
-        holder.price.text = cardElement.price.toString()
-        holder.countryName.text = cardElement.country
+        holder.nombre.text = cardElement.nombre
+        holder.precio.text = cardElement.precio.toString()
+        holder.pais.text = cardElement.pais
 
-        val country = cardElement.country.toLowerCase(Locale.ROOT).replace(" ", "")
+        val country = cardElement.pais.toLowerCase(Locale.ROOT).replace(" ", "")
 
         holder.itemView.setOnClickListener {
 
