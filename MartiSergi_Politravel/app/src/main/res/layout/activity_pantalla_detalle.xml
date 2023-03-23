@@ -1,5 +1,4 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,16 +22,56 @@
             android:layout_width="match_parent"
             android:layout_height="500sp"
             android:layout_marginTop="450sp"
-            android:shapeAppearanceOverlay="@drawable/cardtopcorner"
-            android:elevation="1dp" />
+            android:backgroundTint="@color/white"
+            android:elevation="1dp"
+            app:cardCornerRadius="25sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/white"
+            android:elevation="1dp"/>
 
         <TextView
+            android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="470sp"
             android:layout_marginStart="30sp"
             android:text="Pais"
             android:textColor="@color/black"
+            android:textSize="40sp"
+            android:elevation="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="510sp"
+            android:layout_marginStart="30sp"
+            android:text="€"
+            android:textColor="@color/gris"
+            android:textSize="40sp"
+            android:elevation="2dp"/>
+
+        <TextView
+            android:id="@+id/precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="510sp"
+            android:layout_marginStart="60sp"
+            android:text="40"
+            android:textColor="@color/gris"
+            android:textSize="40sp"
+            android:elevation="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="510sp"
+            android:layout_marginStart="120sp"
+            android:text="/Por persona"
+            android:textColor="@color/gris"
             android:textSize="40sp"
             android:elevation="2dp"/>
 

@@ -1,6 +1,7 @@
 package com.example.martisergi_politravel
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.renderscript.Allocation
+import androidx.renderscript.Element
+import androidx.renderscript.RenderScript
+import androidx.renderscript.ScriptIntrinsicBlur
 import java.io.File
 
 class Adapter(
@@ -49,11 +54,26 @@ class Adapter(
         // Cargar la imagen desde la ruta de la imagen especificada en el campo "img" del modelo TravelPackage
         val imagePath = File(context.filesDir, "img/${cardElement.img}.png")
         val bitmap = BitmapFactory.decodeFile(imagePath.absolutePath)
-        holder.img.setImageBitmap(bitmap)
+        val blurredBitmap = getBlurImage(bitmap)
+        holder.img.setImageBitmap(blurredBitmap)
 
         holder.itemView.setOnClickListener {
             listener.onItemClick(cardElement)
         }
+    }
+
+    fun getBlurImage(imagenRAW: Bitmap?): Bitmap? {
+        val salidaBitmap = Bitmap.createBitmap(imagenRAW!!)
+        val renderScript: RenderScript = RenderScript.create(context)
+        val entradaTemp: Allocation = Allocation.createFromBitmap(renderScript, imagenRAW)
+        val salidaTemp: Allocation = Allocation.createFromBitmap(renderScript, salidaBitmap)
+        val scriptIntrinsicBlur: ScriptIntrinsicBlur =
+            ScriptIntrinsicBlur.create(renderScript, Element.U8_4(renderScript))
+        scriptIntrinsicBlur.setRadius(3f)
+        scriptIntrinsicBlur.setInput(entradaTemp)
+        scriptIntrinsicBlur.forEach(salidaTemp)
+        salidaTemp.copyTo(salidaBitmap)
+        return salidaBitmap
     }
 
 

@@ -17,7 +17,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         // Obtener la lista de paquetes desde un archivo JSON
         val gson = Gson()
         val packages = gson.fromJson(
-            File(this.filesDir, "lista.json").readText(),
+            File(this.filesDir, "infoViajes.json").readText(),
             Array<ClasePaquetes>::class.java
         ).toList()
 

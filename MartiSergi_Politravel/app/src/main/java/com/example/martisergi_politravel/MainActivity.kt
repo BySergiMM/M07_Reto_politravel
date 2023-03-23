@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         runnable = Runnable {
             val intent = Intent(this, PantallaPaquetes::class.java)
             startActivity(intent)
-            finish()
         }
 
         handler.postDelayed(runnable, 10000)
