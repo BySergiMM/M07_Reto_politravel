@@ -1,9 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".PantallaDetalle">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imagenCarta"
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/desierto"
+            android:elevation="1dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            android:layout_marginTop="450sp"
+            android:shapeAppearanceOverlay="@drawable/cardtopcorner"
+            android:elevation="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="470sp"
+            android:layout_marginStart="30sp"
+            android:text="Pais"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:elevation="2dp"/>
+
+    </RelativeLayout>
+</ScrollView>
