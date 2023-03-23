@@ -3,6 +3,7 @@ package com.example.martisergi_politravel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -38,4 +39,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         intent.putExtra("packageId", item.id)
         startActivity(intent)
     }
+
+
 }
