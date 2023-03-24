@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,74 +6,58 @@
     android:orientation="vertical"
     tools:context=".PantallaDetalle">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/montana" />
 
-        <ImageView
-            android:id="@+id/imagenCarta"
-            android:layout_width="match_parent"
-            android:layout_height="500sp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/desierto"
-            android:elevation="1dp" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="500sp"
-            android:layout_marginTop="450sp"
-            android:backgroundTint="@color/white"
-            android:elevation="1dp"
-            app:cardCornerRadius="25sp" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/carta"
             android:layout_width="match_parent"
-            android:layout_height="200sp"
-            android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/white"
-            android:elevation="1dp"/>
+            android:layout_height="750sp"
+            android:layout_marginTop="280dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            android:elevation="1dp">
 
-        <TextView
-            android:id="@+id/nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="470sp"
-            android:layout_marginStart="30sp"
-            android:text="Pais"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:elevation="2dp"/>
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:elevation="2sp"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginStart="20sp"/>
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:src="@drawable/mapsnegro"
+                android:layout_marginTop="24sp"
+                android:layout_marginStart="202sp"
+                android:elevation="2sp"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="510sp"
-            android:layout_marginStart="30sp"
-            android:text="€"
-            android:textColor="@color/gris"
-            android:textSize="40sp"
-            android:elevation="2dp"/>
+            <TextView
+                android:id="@+id/pais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pais"
+                android:elevation="2sp"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginStart="250sp"/>
 
-        <TextView
-            android:id="@+id/precio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="510sp"
-            android:layout_marginStart="60sp"
-            android:text="40"
-            android:textColor="@color/gris"
-            android:textSize="40sp"
-            android:elevation="2dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="510sp"
-            android:layout_marginStart="120sp"
-            android:text="/Por persona"
-            android:textColor="@color/gris"
-            android:textSize="40sp"
-            android:elevation="2dp"/>
-
-    </RelativeLayout>
-</ScrollView>
+        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

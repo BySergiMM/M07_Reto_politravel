@@ -51,7 +51,6 @@ class Adapter(
         holder.precio.text = cardElement.precio.toString()
         holder.pais.text = cardElement.pais
 
-        // Cargar la imagen desde la ruta de la imagen especificada en el campo "img" del modelo TravelPackage
         val imagePath = File(context.filesDir, "img/${cardElement.img}.png")
         val bitmap = BitmapFactory.decodeFile(imagePath.absolutePath)
         val blurredBitmap = getBlurImage(bitmap)
