@@ -39,6 +39,11 @@ class PantallaDetalle : AppCompatActivity() {
         val pais = findViewById<TextView>(R.id.pais)
         pais.text = paisI
 
+        val puntuacion = findViewById<TextView>(R.id.puntuacion)
+        puntuacion.text = puntuacionI.toString()
+
+        val precio = findViewById<TextView>(R.id.precio)
+        precio.text = precioI.toString()
 
         val img = findViewById<ImageView>(R.id.image)
         val imagePath = "${filesDir.absolutePath}/img/"+imgI+".png"
