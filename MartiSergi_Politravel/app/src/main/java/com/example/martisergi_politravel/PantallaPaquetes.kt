@@ -44,9 +44,9 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         val img: String = item.img
         val lugaresInteresantes: Array<String> = item.lugaresInteresantes
         val puntuacion: Double = item.puntuacion
-        val precio: Int = item.precio
+        val precio: String = item.precio
         val descripcion: String = item.descripcion
-        val duración: Int = item.duración
+        val duracion: Int = item.duracion
         val transporte: String = item.transporte
         val inicioTourNombre: String = item.inicioTourNombre
         val finTourNombre: String = item.finTourNombre
@@ -62,7 +62,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         intent.putExtra("puntuacion", puntuacion)
         intent.putExtra("precio", precio)
         intent.putExtra("descripcion", descripcion)
-        intent.putExtra("duración", duración)
+        intent.putExtra("duracion", duracion)
         intent.putExtra("transporte", transporte)
         intent.putExtra("inicioTourNombre", inicioTourNombre)
         intent.putExtra("finTourNombre", finTourNombre)
@@ -71,5 +71,4 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
 
         this.startActivity(intent)
     }
-
 }

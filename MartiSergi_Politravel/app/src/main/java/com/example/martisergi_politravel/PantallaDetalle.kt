@@ -3,10 +3,14 @@ package com.example.martisergi_politravel
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -24,7 +28,7 @@ class PantallaDetalle : AppCompatActivity() {
         val imgI = intent.getStringExtra("img") ?: ""
         val lugaresInteresantesI = intent.getStringArrayExtra("lugaresInteresantes") ?: emptyArray()
         val puntuacionI = intent.getDoubleExtra("puntuacion", 0.0)
-        val precioI = intent.getIntExtra("precio", 0)
+        val precioI = intent.getStringExtra("precio") ?: ""
         val descripcionI = intent.getStringExtra("descripcion") ?: ""
         val duracionI = intent.getIntExtra("duracion", 0)
         val transporteI = intent.getStringExtra("transporte") ?: ""
@@ -43,7 +47,24 @@ class PantallaDetalle : AppCompatActivity() {
         puntuacion.text = puntuacionI.toString()
 
         val precio = findViewById<TextView>(R.id.precio)
-        precio.text = precioI.toString()
+        precio.text = precioI
+
+        val duracion = findViewById<TextView>(R.id.duracion)
+        duracion.text = duracionI.toString()
+
+        val transporte = findViewById<TextView>(R.id.transporte)
+        transporte.text = transporteI
+
+        val imgTransporte = findViewById<ImageView>(R.id.imgTransporte)
+
+        if (transporteI.equals("avión")){
+            imgTransporte.setImageResource(R.drawable.avion)
+        }else if (transporteI.equals("barco")){
+            imgTransporte.setImageResource(R.drawable.barco)
+        }else if (transporteI.equals("coche")){
+            imgTransporte.setImageResource(R.drawable.coche)
+        }
+
 
         val img = findViewById<ImageView>(R.id.image)
         val imagePath = "${filesDir.absolutePath}/img/"+imgI+".png"
@@ -54,25 +75,6 @@ class PantallaDetalle : AppCompatActivity() {
             img.setImageBitmap(bitmap)
         } else {
             Log.e("TAG", "La imagen no existe en la ruta: $imagePath")
-        }
-
-
-
-        val carta = findViewById<CardView>(R.id.carta)
-
-        carta.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    // Al presionar la carta, no hace nada
-                }
-                MotionEvent.ACTION_UP -> {
-                    // Al soltar la carta, la anima para moverla hacia arriba
-                    val anim = ObjectAnimator.ofFloat(carta, "translationY", 0f, -500f)
-                    anim.duration = 500
-                    anim.start()
-                }
-            }
-            true
         }
     }
 }

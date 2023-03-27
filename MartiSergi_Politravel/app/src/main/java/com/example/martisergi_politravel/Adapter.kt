@@ -48,7 +48,7 @@ class Adapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val cardElement = itemList[position]
         holder.nombre.text = cardElement.nombre
-        holder.precio.text = cardElement.precio.toString()
+        holder.precio.text = cardElement.precio
         holder.pais.text = cardElement.pais
 
         val imagePath = File(context.filesDir, "img/${cardElement.img}.png")
