@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private val handler = Handler()
     private lateinit var runnable: Runnable
+    private lateinit var imageTimer: Timer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,28 +27,30 @@ class MainActivity : AppCompatActivity() {
         val Layout = findViewById<RelativeLayout>(R.id.layout)
 
         Layout.setOnClickListener {
+            handler.removeCallbacks(runnable)
             val intent = Intent(this, PantallaPaquetes::class.java)
             startActivity(intent)
+            finish()
         }
 
         runnable = Runnable {
             val intent = Intent(this, PantallaPaquetes::class.java)
             startActivity(intent)
+            finish()
         }
 
         handler.postDelayed(runnable, 10000)
-
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(runnable)
+        imageTimer.cancel()
     }
 
     private fun startImageTimer() {
         val handler = Handler()
-        val imageTimer = Timer()
+        imageTimer = Timer()
 
         imageTimer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
@@ -56,6 +59,6 @@ class MainActivity : AppCompatActivity() {
                     myImageView.setImageResource(imageList[randomIndex])
                 }
             }
-        }, 0, 3000)
+        },0, 3000)
     }
 }

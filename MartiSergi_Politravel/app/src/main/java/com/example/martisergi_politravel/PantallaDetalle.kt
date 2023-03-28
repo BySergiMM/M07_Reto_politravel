@@ -1,19 +1,12 @@
 package com.example.martisergi_politravel
 
-import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.media.Image
 import android.os.Bundle
 import android.util.Log
-import android.view.MotionEvent
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import java.io.File
 
 class PantallaDetalle : AppCompatActivity() {
@@ -55,8 +48,14 @@ class PantallaDetalle : AppCompatActivity() {
         val transporte = findViewById<TextView>(R.id.transporte)
         transporte.text = transporteI
 
-        val imgTransporte = findViewById<ImageView>(R.id.imgTransporte)
+        val descripcion = findViewById<TextView>(R.id.descripcion)
+        descripcion.text = descripcionI
 
+        val itinerario = findViewById<TextView>(R.id.itinerario)
+        val lugaresInteresantesStr = lugaresInteresantesI.joinToString(separator = "\n")
+        itinerario.text = lugaresInteresantesStr
+
+        val imgTransporte = findViewById<ImageView>(R.id.imgTransporte)
         if (transporteI.equals("avión")){
             imgTransporte.setImageResource(R.drawable.avion)
         }else if (transporteI.equals("barco")){
@@ -64,7 +63,6 @@ class PantallaDetalle : AppCompatActivity() {
         }else if (transporteI.equals("coche")){
             imgTransporte.setImageResource(R.drawable.coche)
         }
-
 
         val img = findViewById<ImageView>(R.id.image)
         val imagePath = "${filesDir.absolutePath}/img/"+imgI+".png"

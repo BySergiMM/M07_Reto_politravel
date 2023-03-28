@@ -26,7 +26,7 @@
                 android:id="@+id/carta"
                 android:layout_width="match_parent"
                 android:layout_height="950sp"
-                android:layout_marginTop="280dp"
+                android:layout_marginTop="400dp"
                 android:elevation="1dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp">
@@ -150,17 +150,45 @@
                     android:textColor="@color/black"
                     android:textSize="27sp" />
 
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50sp"
+                    android:layout_marginTop="200sp"
+                    android:layout_marginEnd="50sp"
+                    android:elevation="2sp"
+                    android:text="Un viaje a Tokio te sumergirá en una cultura fascinante y en una de las ciudades más vibrantes del mundo. Visita el majestuoso Palacio Imperial de Tokio, el histórico Templo Sensō-ji, y explora el moderno y animado barrio de Shinjuku. La comida japonesa es deliciosa y variada, y la tecnología en Tokio es sorprendente. También puedes disfrutar de la vida nocturna en el barrio de Roppongi y en la zona de Shibuya."
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50sp"
-                    android:layout_marginEnd="50sp"
-                    android:layout_marginTop="200sp"
+                    android:layout_marginTop="500sp"
                     android:elevation="2sp"
-                    android:text="Ven a disfrutar de la belleza natural y cultural de Río de Janeiro, una ciudad vibrante que lo tiene todo. Desde las impresionantes vistas del Cristo Redentor hasta la icónica playa de Copacabana, pasando por la montaña del Pão de Açúcar y sus paisajes espectaculares. La música, la comida y la cultura brasileña te harán sentir como en casa.Ven a disfrutar de la belleza natural y cultural de Río de Janeiro, una ciudad vibrante que lo tiene todo. Desde las impresionantes vistas del Cristo Redentor hasta la icónica playa de Copacabana, pasando por la montaña del Pão de Açúcar y sus paisajes espectaculares. La música, la comida y la cultura brasileña te harán sentir como en casa."
+                    android:text="Itinerario"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/itinerario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="560sp"
+                    android:layout_marginBottom="500sp"
+                    android:elevation="2sp"
+                    android:text="Playa Delfines,&#10;Playa Delfines,&#10;Playa Delfines"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
 
             </androidx.cardview.widget.CardView>
         </androidx.core.widget.NestedScrollView>
