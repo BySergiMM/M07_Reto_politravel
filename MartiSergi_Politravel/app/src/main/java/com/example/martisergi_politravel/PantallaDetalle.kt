@@ -8,12 +8,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
-
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 class PantallaDetalle : AppCompatActivity() {
-    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_detalle)
+
+        mapView = findViewById(R.id.mapView)
+        mapView.onCreate(savedInstanceState)
+        mapView.getMapAsync(this)
 
         val id = intent.getIntExtra("id", 0)
         val nombreI = intent.getStringExtra("nombre") ?: ""
@@ -74,5 +82,46 @@ class PantallaDetalle : AppCompatActivity() {
         } else {
             Log.e("TAG", "La imagen no existe en la ruta: $imagePath")
         }
+
     }
-}
+
+    private lateinit var mapView: MapView
+    private lateinit var mMap: GoogleMap
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        val location = LatLng(-34.0, 151.0)
+        mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mapView.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mapView.onResume()
+    }
+
+    override fun onPause() {
+        mapView.onPause()
+        super.onPause()
+    }
+
+    override fun onStop() {
+        mapView.onStop()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        mapView.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView.onLowMemory()
+    }
