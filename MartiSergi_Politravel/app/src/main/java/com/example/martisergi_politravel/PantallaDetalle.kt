@@ -1,6 +1,5 @@
 package com.example.martisergi_politravel
 
-import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -8,21 +7,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.GoogleMap;
+
 class PantallaDetalle : AppCompatActivity() {
+
+    private lateinit var googleMap: GoogleMap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_detalle)
 
-        mapView = findViewById(R.id.mapView)
-        mapView.onCreate(savedInstanceState)
-        mapView.getMapAsync(this)
-
+        // Obtener los datos del intent
         val id = intent.getIntExtra("id", 0)
         val nombreI = intent.getStringExtra("nombre") ?: ""
         val paisI = intent.getStringExtra("pais") ?: ""
@@ -35,9 +30,8 @@ class PantallaDetalle : AppCompatActivity() {
         val transporteI = intent.getStringExtra("transporte") ?: ""
         val inicioTourNombreI = intent.getStringExtra("inicioTourNombre") ?: ""
         val finTourNombreI = intent.getStringExtra("finTourNombre") ?: ""
-        val inicioTourCoordenadasI = intent.getDoubleArrayExtra("inicioTourCoordenadas") ?: doubleArrayOf()
-        val finTourCoordenadasI = intent.getDoubleArrayExtra("finTourCoordenadas") ?: doubleArrayOf()
 
+        // Actualizar las vistas con los datos del intent
         val nombre = findViewById<TextView>(R.id.nombre)
         nombre.text = nombreI
 
@@ -64,16 +58,14 @@ class PantallaDetalle : AppCompatActivity() {
         itinerario.text = lugaresInteresantesStr
 
         val imgTransporte = findViewById<ImageView>(R.id.imgTransporte)
-        if (transporteI.equals("avión")){
-            imgTransporte.setImageResource(R.drawable.avion)
-        }else if (transporteI.equals("barco")){
-            imgTransporte.setImageResource(R.drawable.barco)
-        }else if (transporteI.equals("coche")){
-            imgTransporte.setImageResource(R.drawable.coche)
+        when (transporteI) {
+            "avión" -> imgTransporte.setImageResource(R.drawable.avion)
+            "barco" -> imgTransporte.setImageResource(R.drawable.barco)
+            "coche" -> imgTransporte.setImageResource(R.drawable.coche)
         }
 
         val img = findViewById<ImageView>(R.id.image)
-        val imagePath = "${filesDir.absolutePath}/img/"+imgI+".png"
+        val imagePath = "${filesDir.absolutePath}/img/$imgI.png"
 
         val file = File(imagePath)
         if (file.exists()) {
@@ -82,46 +74,5 @@ class PantallaDetalle : AppCompatActivity() {
         } else {
             Log.e("TAG", "La imagen no existe en la ruta: $imagePath")
         }
-
     }
-
-    private lateinit var mapView: MapView
-    private lateinit var mMap: GoogleMap
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        val location = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
-    }
-
-    override fun onStart() {
-        super.onStart()
-        mapView.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-
-    override fun onPause() {
-        mapView.onPause()
-        super.onPause()
-    }
-
-    override fun onStop() {
-        mapView.onStop()
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        mapView.onDestroy()
-        super.onDestroy()
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        mapView.onLowMemory()
-    }
+}
