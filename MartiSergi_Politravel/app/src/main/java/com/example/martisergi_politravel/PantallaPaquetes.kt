@@ -1,8 +1,10 @@
 package com.example.martisergi_politravel
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         // Crear el adaptador y asignarlo al RecyclerView
         val adapter = Adapter(this, packages, this)
         recyclerView.adapter = adapter
+
     }
 
 
@@ -50,9 +53,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         val transporte: String = item.transporte
         val inicioTourNombre: String = item.inicioTourNombre
         val finTourNombre: String = item.finTourNombre
-        val inicioTourCoordenadas: Array<Double> = item.inicioTourCoordenadas
-        val finTourCoordenadas: Array<Double> = item.finTourCoordenadas
-
 
         intent.putExtra("id", id)
         intent.putExtra("nombre", nombre)
@@ -66,8 +66,12 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         intent.putExtra("transporte", transporte)
         intent.putExtra("inicioTourNombre", inicioTourNombre)
         intent.putExtra("finTourNombre", finTourNombre)
-        intent.putExtra("inicioTourCoordenadas", inicioTourCoordenadas)
-        intent.putExtra("finTourCoordenadas", finTourCoordenadas)
+
+        val inicioTourCoordenadas: Array<Double> = item.inicioTourCoordenadas
+        val finTourCoordenadas: Array<Double> = item.finTourCoordenadas
+
+        intent.putExtra("inicioTourCoordenadas", inicioTourCoordenadas.map { it.toString() }.toTypedArray())
+        intent.putExtra("finTourCoordenadas", finTourCoordenadas.map { it.toString() }.toTypedArray())
 
         this.startActivity(intent)
     }

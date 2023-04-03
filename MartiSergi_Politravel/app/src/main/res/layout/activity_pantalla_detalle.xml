@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/montana" />
+        android:src="@drawable/montana"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scroll_view"
@@ -24,7 +24,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/carta"
             android:layout_width="match_parent"
-            android:layout_height="950sp"
+            android:layout_height="960sp"
             android:layout_marginTop="400dp"
             android:elevation="1dp"
             app:cardBackgroundColor="@color/white"
@@ -183,7 +183,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="500sp"
+                android:layout_marginTop="650sp"/>
 
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>

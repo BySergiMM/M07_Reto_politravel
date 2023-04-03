@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Alta de paquete turístico" />
+
+        <TextView
+            android:id="@+id/tv_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+
+        <EditText
+            android:id="@+id/et_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce el nombre del paquete turístico" />
+
+        <TextView
+            android:id="@+id/tv_pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="País" />
+
+        <EditText
+            android:id="@+id/et_pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce el país del paquete turístico" />
+
+        <TextView
+            android:id="@+id/tv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Imagen" />
+
+        <EditText
+            android:id="@+id/et_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce la URL de la imagen del paquete turístico" />
+
+        <TextView
+            android:id="@+id/tv_lugares_interesantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lugares interesantes" />
+
+        <EditText
+            android:id="@+id/et_lugares_interesantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce los lugares interesantes del paquete turístico separados por comas" />
+
+        <TextView
+            android:id="@+id/tv_puntuacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puntuación" />
+
+        <RatingBar
+            android:id="@+id/rb_puntuacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+        <TextView
+            android:id="@+id/tv_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text
