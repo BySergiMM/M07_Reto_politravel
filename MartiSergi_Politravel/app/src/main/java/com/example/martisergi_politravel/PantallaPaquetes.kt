@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
@@ -34,6 +35,12 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         // Crear el adaptador y asignarlo al RecyclerView
         val adapter = Adapter(this, packages, this)
         recyclerView.adapter = adapter
+
+        val floaticon: FloatingActionButton = findViewById(R.id.floaticon)
+        floaticon.setOnClickListener {
+            val intent = Intent(this, PantallaDarDeAlta::class.java)
+            startActivity(intent)
+        }
 
     }
 

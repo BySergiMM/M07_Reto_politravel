@@ -83,21 +83,7 @@
         android:text="Spain"
         android:textColor="@color/white"
         android:textSize="27sp"
-        android:elevation="4sp"
-        />
-
-    <ImageView
-        android:id="@+id/entrar"
-        android:layout_width="65sp"
-        android:layout_height="65sp"
-        android:src="@drawable/entrar"
-        android:layout_marginTop="210sp"
-        android:layout_marginStart="280sp"
-        android:rotation="145"
-        android:elevation="5sp"
-        />
-
-
+        android:elevation="4sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="160dp"
@@ -108,7 +94,6 @@
         android:backgroundTint="@color/black"
         app:cardCornerRadius="25sp"
         android:elevation="3sp"/>
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

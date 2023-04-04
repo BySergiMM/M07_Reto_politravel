@@ -1,85 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gris">
 
-    <LinearLayout
+    <!-- Encabezado de la pantalla -->
+    <TextView
+        android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:text="Agregar nuevo paquete"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
+
+    <!-- Formulario para añadir nuevo paquete -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titulo"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tv_titulo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:text="Alta de paquete turístico" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre" />
+            <!-- Campo para introducir el nombre del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre del paquete"/>
 
-        <EditText
-            android:id="@+id/et_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce el nombre del paquete turístico" />
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_pais"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="País" />
+            <!-- Campo para introducir el país del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="País del paquete"/>
 
-        <EditText
-            android:id="@+id/et_pais"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce el país del paquete turístico" />
+            <EditText
+                android:id="@+id/pais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Imagen" />
+            <!-- Campo para introducir la imagen del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Imagen del paquete"/>
 
-        <EditText
-            android:id="@+id/et_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce la URL de la imagen del paquete turístico" />
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"/>
 
-        <TextView
-            android:id="@+id/tv_lugares_interesantes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lugares interesantes" />
+            <!-- Campo para introducir los lugares interesantes del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lugares interesantes del paquete"/>
 
-        <EditText
-            android:id="@+id/et_lugares_interesantes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce los lugares interesantes del paquete turístico separados por comas" />
+            <EditText
+                android:id="@+id/lugaresInteresantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_puntuacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Puntuación" />
+            <!-- Campo para introducir la puntuación del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Puntuación del paquete"/>
 
-        <RatingBar
-            android:id="@+id/rb_puntuacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5" />
+            <RatingBar
+                android:id="@+id/puntuacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.1"/>
 
-        <TextView
-            android:id="@+id/tv_precio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text
+            <!-- Campo para introducir el precio del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Precio del paquete"/>
+
+            <EditText
+                android:id="@+id/precio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Campo para introducir la descripción del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción del paquete"/>
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:lines="5"/>
+
+            <!-- Campo para introducir la duración del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Duración del paquete (en días)"/>
+
+            <EditText
+                android:id="@+id/duracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+            <!-- Campo para introducir el transporte del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transporte del paquete"/>
+
+            <!-- Opciones de transporte -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <ImageView
+                    android:id="@+id/avion"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/avion"/>
+
+                <ImageView
+                    android:id="@+id/barco"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/barco"/>
+
+                <ImageView
+                    android:id="@+id/coche"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/coche"/>
+
+            </LinearLayout>
+
+            <!-- Campo para introducir el nombre de inicio del tour del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de inicio del tour del paquete"/>
+
+            <EditText
+                android:id="@+id/inicioTourNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Campo para introducir el nombre de fin del tour del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de fin del tour del paquete"/>
+
+            <EditText
+                android:id="@+id/finTourNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Campo para introducir las coordenadas de inicio del tour del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coordenadas de inicio del tour del paquete"/>
+
+            <EditText
+                android:id="@+id/inicioTourCoordenadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Campo para introducir las coordenadas de fin del tour del paquete -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coordenadas de fin del tour del paquete"/>
+
+            <EditText
+                android:id="@+id/finTourCoordenadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Botón para añadir el paquete -->
+            <Button
+                android:id="@+id/botonAgregarPaquete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar paquete"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
