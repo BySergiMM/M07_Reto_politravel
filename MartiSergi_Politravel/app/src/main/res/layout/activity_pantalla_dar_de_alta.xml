@@ -58,10 +58,10 @@
             <GridView
                 android:id="@+id/gridview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:numColumns="3"
-                android:horizontalSpacing="10dp"
-                android:verticalSpacing="10dp"/>
+                android:layout_height="350sp"
+                android:numColumns="2"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
 
             <!-- Campo para introducir los lugares interesantes del paquete -->
             <TextView

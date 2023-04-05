@@ -1,9 +1,10 @@
 package com.example.martisergi_politravel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
+import java.io.File
 
 class PantallaDarDeAlta : AppCompatActivity() {
 
@@ -37,22 +38,17 @@ class PantallaDarDeAlta : AppCompatActivity() {
         gridView = findViewById(R.id.gridview)
         puntuacionRatingBar = findViewById(R.id.puntuacion)
 
-// Configurar el listener del botón Guardar
+        // Configurar el listener del botón Guardar
         val guardarButton: Button = findViewById(R.id.botonAgregarPaquete)
         guardarButton.setOnClickListener {
-            // Verificar que los valores sean válidos
-            if (nombre.isEmpty() || pais.isEmpty() || lugaresInteresantes.isEmpty() || precio.isEmpty() || descripcion.isEmpty() || duracion.isEmpty()) {
-                Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                // Guardar los valores
-                guardarPaquete()
-            }
+            guardarPaquete()
         }
 
+        val imgDir = File(this.filesDir, "img")
+        val imgFiles = imgDir.listFiles()?.filter { it.isFile }?.map { it.name }
+        val gridView: GridView = findViewById(R.id.gridview)
+        gridView.adapter = ImageAdapter(this, imgFiles!!)
     }
-
-
-
     fun guardarPaquete() {
         // Obtener los valores introducidos por el usuario
         val nombre = nombreEditText.text.toString().trim()
@@ -65,20 +61,37 @@ class PantallaDarDeAlta : AppCompatActivity() {
             avionImageView.isSelected -> "Avión"
             barcoImageView.isSelected -> "Barco"
             cocheImageView.isSelected -> "Coche"
-            else -> ""
+            else -> "Avión"
         }
         val inicioTourNombre = "Inicio del tour"
         val finTourNombre = "Fin del tour"
         val inicioTourCoordenadas = arrayOf(0.0, 0.0)
         val finTourCoordenadas = arrayOf(0.0, 0.0)
         val puntuacion = puntuacionRatingBar.rating.toDouble()
+        val imagen = if (gridView.selectedItem != null) {
+            val imgName = gridView.selectedItem.toString()
+            File(this.filesDir, "img/$imgName").name
+        } else {
+            ""
+        }
 
-        // Crear el objeto ClasePaquetes
+        // Obtener el último id de los paquetes guardados
+        val gson = Gson()
+        val file = File(this.filesDir, "infoViajes.json")
+        val paquetes = if (file.exists()) {
+            gson.fromJson(file.readText(), Array<ClasePaquetes>::class.java).toList()
+        } else {
+            emptyList()
+        }
+        val lastPackage = paquetes.maxByOrNull { it.id }
+        val lastId = lastPackage?.id ?: 0
+
+        // Crear el objeto ClasePaquetes con el nuevo id
         val paquete = ClasePaquetes(
-            0,
+            lastId + 1,
             nombre,
             pais,
-            "",
+            imagen,
             lugaresInteresantes,
             puntuacion,
             precio,
@@ -91,22 +104,12 @@ class PantallaDarDeAlta : AppCompatActivity() {
             finTourCoordenadas
         )
 
-        // Convertir el objeto en una cadena JSON
-        val gson = Gson()
-        val paqueteJson = gson.toJson(paquete)
-
-        // Guardar la cadena JSON en un archivo, por ejemplo
-        // ...
+        // Agregar el paquete al archivo JSON
+        val newPaquetes = paquetes.toMutableList()
+        newPaquetes.add(paquete)
+        file.writeText(gson.toJson(newPaquetes))
 
         // Mostrar un mensaje de éxito
         Toast.makeText(this, "El paquete se ha guardado correctamente", Toast.LENGTH_SHORT).show()
     }
-
-
-
-
-
-
-
-
 }
