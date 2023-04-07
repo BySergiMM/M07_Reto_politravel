@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "París",
         "pais": "Francia",
-        "img":"paris",
+        "img":"paris.png",
         "lugaresInteresantes": [
             "Torre Eiffel",
             "Museo del Louvre",
@@ -29,7 +29,7 @@
         "id": 2,
         "nombre": "Cancún",
         "pais": "México",
-        "img":"cancun",
+        "img":"cancun.png",
         "lugaresInteresantes": [
             "Playa Delfines",
             "Zona Arqueológica El Rey",
@@ -55,7 +55,7 @@
         "id": 3,
         "nombre": "Ámsterdam",
         "pais": "Países Bajos",
-        "img":"amsterdam",
+        "img":"amsterdam.png",
         "lugaresInteresantes": [
             "Museo Van Gogh",
             "Barrio Rojo",
@@ -81,7 +81,7 @@
         "id": 4,
         "nombre": "Tokio",
         "pais": "Japón",
-        "img":"tokio",
+        "img":"tokio.png",
         "lugaresInteresantes": [
             "El Palacio Imperial de Tokio",
             "El Templo Sensō-ji",
@@ -107,7 +107,7 @@
         "id": 5,
         "nombre": "Río de Janeiro",
         "pais": "Brasil",
-        "img":"riodejaneiro",
+        "img":"riodejaneiro.png",
         "lugaresInteresantes": [
             "Cristo Redentor",
             "Playa de Copacabana",

@@ -51,7 +51,7 @@ class Adapter(
         holder.precio.text = cardElement.precio
         holder.pais.text = cardElement.pais
 
-        val imagePath = File(context.filesDir, "img/${cardElement.img}.png")
+        val imagePath = File(context.filesDir, "img/${cardElement.img}")
         val bitmap = BitmapFactory.decodeFile(imagePath.absolutePath)
         val blurredBitmap = getBlurImage(bitmap)
         holder.img.setImageBitmap(blurredBitmap)

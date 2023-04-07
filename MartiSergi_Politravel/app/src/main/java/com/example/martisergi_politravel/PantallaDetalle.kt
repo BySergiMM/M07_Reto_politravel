@@ -92,7 +92,7 @@ class PantallaDetalle : AppCompatActivity(), OnMapReadyCallback {
         }
 
         val img = findViewById<ImageView>(R.id.image)
-        val imagePath = "${filesDir.absolutePath}/img/$imgI.png"
+        val imagePath = "${filesDir.absolutePath}/img/$imgI"
 
         val file = File(imagePath)
         if (file.exists()) {
