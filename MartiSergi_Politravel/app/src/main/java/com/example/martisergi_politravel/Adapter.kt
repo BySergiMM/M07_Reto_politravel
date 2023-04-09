@@ -17,12 +17,19 @@ import java.io.File
 
 class Adapter(
     private val context: Context,
-    private val itemList: List<ClasePaquetes>,
+    private var itemList: List<ClasePaquetes>,
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(item: ClasePaquetes)
+    }
+    fun removeItem(index: Int) {
+        itemList.toMutableList().apply {
+            removeAt(index)
+            itemList = this.toList()
+        }
+        notifyItemRemoved(index)
     }
 
     inner class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -74,7 +81,6 @@ class Adapter(
         salidaTemp.copyTo(salidaBitmap)
         return salidaBitmap
     }
-
 
     override fun getItemCount() = itemList.size
 }

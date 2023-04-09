@@ -1,18 +1,13 @@
 package com.example.martisergi_politravel
 
-import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.io.File
-import java.io.FileReader
 
 class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
 
@@ -20,19 +15,16 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_paquetes)
 
-        // Obtener la lista de paquetes desde un archivo JSON
         val gson = Gson()
         val packages = gson.fromJson(
             File(this.filesDir, "infoViajes.json").readText(),
             Array<ClasePaquetes>::class.java
         ).toList()
 
-        // Configurar el RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        // Crear el adaptador y asignarlo al RecyclerView
         val adapter = Adapter(this, packages, this)
         recyclerView.adapter = adapter
 
@@ -41,7 +33,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
             val intent = Intent(this, PantallaDarDeAlta::class.java)
             startActivity(intent)
         }
-
     }
 
 

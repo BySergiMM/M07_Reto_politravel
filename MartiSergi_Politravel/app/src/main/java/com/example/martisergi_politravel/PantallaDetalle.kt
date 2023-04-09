@@ -66,7 +66,7 @@ class PantallaDetalle : AppCompatActivity(), OnMapReadyCallback {
         pais.text = paisI
 
         val puntuacion = findViewById<TextView>(R.id.puntuacion)
-        puntuacion.text = puntuacionI.toString()
+        puntuacion.text = String.format("%.2f", puntuacionI)
 
         val precio = findViewById<TextView>(R.id.precio)
         precio.text = precioI
