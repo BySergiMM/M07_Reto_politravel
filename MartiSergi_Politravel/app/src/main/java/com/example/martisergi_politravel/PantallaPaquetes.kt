@@ -3,29 +3,34 @@ package com.example.martisergi_politravel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import java.io.File
 
-class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
+class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapter.OnItemLongClickListener {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var packages: MutableList<ClasePaquetes>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_paquetes)
 
         val gson = Gson()
-        val packages = gson.fromJson(
+        packages = gson.fromJson(
             File(this.filesDir, "infoViajes.json").readText(),
             Array<ClasePaquetes>::class.java
-        ).toList()
+        ).toMutableList()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
         val adapter = Adapter(this, packages, this)
+        adapter.setOnItemLongClickListener(this)
         recyclerView.adapter = adapter
 
         val floaticon: FloatingActionButton = findViewById(R.id.floaticon)
@@ -34,7 +39,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
             startActivity(intent)
         }
     }
-
 
     override fun onItemClick(item: ClasePaquetes) {
         val intent = Intent(this, PantallaDetalle::class.java)
@@ -72,5 +76,20 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener {
         intent.putExtra("finTourCoordenadas", finTourCoordenadas.map { it.toString() }.toTypedArray())
 
         this.startActivity(intent)
+    }
+
+    override fun onItemLongClick(position: Int): Boolean {
+        // Remover el elemento de la lista
+        packages.removeAt(position)
+
+        // Actualizar el archivo JSON
+        val gson = Gson()
+        val json = gson.toJson(packages)
+        File(this.filesDir, "infoViajes.json").writeText(json)
+
+        // Notificar al adapter que el conjunto de datos ha cambiado
+        recyclerView.adapter?.notifyDataSetChanged()
+
+        return true
     }
 }

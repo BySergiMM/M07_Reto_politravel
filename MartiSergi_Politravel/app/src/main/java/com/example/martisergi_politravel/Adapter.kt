@@ -13,28 +13,31 @@ import androidx.renderscript.Allocation
 import androidx.renderscript.Element
 import androidx.renderscript.RenderScript
 import androidx.renderscript.ScriptIntrinsicBlur
+import com.google.gson.Gson
 import java.io.File
 
 class Adapter(
     private val context: Context,
     private var itemList: List<ClasePaquetes>,
-    private val listener: OnItemClickListener
+    private val listener: OnItemClickListener,
+    private var onItemLongClickListener: OnItemLongClickListener? = null
 ) : RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(item: ClasePaquetes)
     }
-    fun removeItem(index: Int) {
-        itemList.toMutableList().apply {
-            removeAt(index)
-            itemList = this.toList()
-        }
-        notifyItemRemoved(index)
+    interface OnItemLongClickListener {
+        fun onItemLongClick(position: Int): Boolean
+    }
+    fun setOnItemLongClickListener(listener: OnItemLongClickListener) {
+        onItemLongClickListener = listener
     }
 
-    inner class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+
+    inner class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
         init {
             itemView.setOnClickListener(this)
+            itemView.setOnLongClickListener(this)
         }
 
         val nombre: TextView = view.findViewById(R.id.nombre)
@@ -44,6 +47,10 @@ class Adapter(
 
         override fun onClick(p0: View?) {
             listener.onItemClick(itemList[position])
+        }
+
+        override fun onLongClick(p0: View?): Boolean {
+            return onItemLongClickListener?.onItemLongClick(adapterPosition) ?: false
         }
     }
 

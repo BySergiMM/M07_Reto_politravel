@@ -127,8 +127,6 @@ class PantallaDarDeAlta : AppCompatActivity() {
                 Toast.makeText(this, "Error: el campo de coordenadas no puede estar vacío", Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 
     private fun readImagesFromDirectory(): List<String> {
