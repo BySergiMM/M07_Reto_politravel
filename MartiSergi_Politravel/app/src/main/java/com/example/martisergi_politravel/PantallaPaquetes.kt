@@ -3,6 +3,8 @@ package com.example.martisergi_politravel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +15,7 @@ import java.io.File
 class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapter.OnItemLongClickListener {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var packages: MutableList<ClasePaquetes>
+    lateinit var packages: MutableList<ClasePaquetes>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,18 +80,18 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
         this.startActivity(intent)
     }
 
-    override fun onItemLongClick(position: Int): Boolean {
-        // Remover el elemento de la lista
+    fun deleteElementSelected(position: Int){
         packages.removeAt(position)
 
-        // Actualizar el archivo JSON
         val gson = Gson()
         val json = gson.toJson(packages)
         File(this.filesDir, "infoViajes.json").writeText(json)
 
-        // Notificar al adapter que el conjunto de datos ha cambiado
         recyclerView.adapter?.notifyDataSetChanged()
+    }
 
-        return true
+    fun ModifyElementSelected(position: Int){
+        val intent = Intent(this, PantallaModificar::class.java)
+        this.startActivity(intent)
     }
 }
