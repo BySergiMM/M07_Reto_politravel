@@ -3,9 +3,7 @@ package com.example.martisergi_politravel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
-import android.view.View
-import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -90,8 +88,29 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
         recyclerView.adapter?.notifyDataSetChanged()
     }
 
-    fun ModifyElementSelected(position: Int){
-        val intent = Intent(this, PantallaModificar::class.java)
-        this.startActivity(intent)
+    override fun onItemLongClick(position: Int): Boolean {
+        val itemView = recyclerView.findViewHolderForAdapterPosition(position)?.itemView
+        itemView?.let { view ->
+            val popupMenu = PopupMenu(view.context, view)
+            popupMenu.menuInflater.inflate(R.menu.menu_contextual, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem ->
+                // Acción a realizar cuando se selecciona un elemento del menú
+                when (menuItem.itemId) {
+                    R.id.editar -> {
+                        val intent = Intent(this, PantallaModificar::class.java)
+                        intent.putExtra("position", position)
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.eliminar -> {
+                        deleteElementSelected(position)
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popupMenu.show()
+        }
+        return true
     }
 }
