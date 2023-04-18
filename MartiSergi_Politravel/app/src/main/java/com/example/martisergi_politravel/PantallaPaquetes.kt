@@ -97,7 +97,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
                 // Acción a realizar cuando se selecciona un elemento del menú
                 when (menuItem.itemId) {
                     R.id.editar -> {
-                        val intent = Intent(this, PaPantallaModificar::class.java)
+                        val intent = Intent(this, PantallaModificar::class.java)
                         intent.putExtra("position", position)
                         startActivity(intent)
                         true
