@@ -1,3 +1,5 @@
+package com.example.martisergi_politravel;
+
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -25,7 +27,7 @@ class PantallaModificar : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_dar_de_alta)
+        setContentView(R.layout.activity_pantalla_modificar)
 
         // Inicialización de los componentes de la interfaz
         val adapterSpinner = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayOf("avión", "barco", "coche"))
@@ -53,7 +55,7 @@ class PantallaModificar : AppCompatActivity() {
             paquete = paquetes[position]
             nombreEditText.setText(paquete.nombre)
             paisEditText.setText(paquete.pais)
-            lugaresInteresantesEditText.setText(paquete.lugaresInteresantes)
+            lugaresInteresantesEditText.setText(paquete.lugaresInteresantes.joinToString())
             precioEditText.setText(paquete.precio.toString())
             descripcionEditText.setText(paquete.descripcion)
             duracionEditText.setText(paquete.duracion)
