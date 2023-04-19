@@ -1,10 +1,8 @@
-package com.example.martisergi_politravel;
+package com.example.martisergi_politravel
 
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.martisergi_politravel.ClasePaquetes
-import com.example.martisergi_politravel.R
 import com.google.gson.Gson
 import java.io.File
 
@@ -19,18 +17,22 @@ class PantallaModificar : AppCompatActivity() {
     private lateinit var gridView: GridView
     private lateinit var puntuacionRatingBar: RatingBar
     private lateinit var transporte: Spinner
-    private var inicioTourCoordenadasX: Double = 0.0
-    private var inicioTourCoordenadasY: Double = 0.0
-    private var finTourCoordenadasX: Double = 0.0
-    private var finTourCoordenadasY: Double = 0.0
-    private lateinit var paquete: ClasePaquetes
+    private lateinit var inicioTourNombre: EditText
+    private lateinit var finTourNombre: EditText
+    private lateinit var inicioTourCoordenadasX: EditText
+    private lateinit var inicioTourCoordenadasY: EditText
+    private lateinit var finTourCoordenadasX: EditText
+    private lateinit var finTourCoordenadasY: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_modificar)
 
-        // Inicialización de los componentes de la interfaz
-        val adapterSpinner = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayOf("avión", "barco", "coche"))
+        val adapterSpinner = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            arrayOf("avión", "barco", "coche")
+        )
         adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         transporte = findViewById(R.id.transporte)
         transporte.adapter = adapterSpinner
@@ -42,8 +44,28 @@ class PantallaModificar : AppCompatActivity() {
         duracionEditText = findViewById(R.id.duracion)
         gridView = findViewById(R.id.gridview)
         puntuacionRatingBar = findViewById(R.id.puntuacion)
-        // Cargar los datos del paquete seleccionado
-        val position = intent.getIntExtra("position", -1)
+        inicioTourNombre= findViewById(R.id.inicioTourNombre)
+        finTourNombre = findViewById(R.id.finTourNombre)
+
+        inicioTourCoordenadasX = findViewById(R.id.inicioTourCoordenadasX)
+        inicioTourCoordenadasY = findViewById(R.id.inicioTourCoordenadasY)
+        finTourCoordenadasX = findViewById(R.id.finTourCoordenadasX)
+        finTourCoordenadasY = findViewById(R.id.finTourCoordenadasY)
+
+
+        gridView = findViewById(R.id.gridview)
+
+        val adapter = PantallaDarDeAlta.ImageAdapter(this, readImagesFromDirectory())
+        gridView.adapter = adapter
+
+        gridView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            view.setBackgroundResource(R.drawable.image_selected)
+
+            val selectedImageName = adapter.getItem(position)
+
+            adapter.selectedImageName = selectedImageName
+        }
+
         val gson = Gson()
         val file = File(filesDir, "infoViajes.json")
         val paquetes = if (file.exists()) {
@@ -51,23 +73,55 @@ class PantallaModificar : AppCompatActivity() {
         } else {
             mutableListOf()
         }
-        if (position >= 0 && position < paquetes.size) {
-            paquete = paquetes[position]
-            nombreEditText.setText(paquete.nombre)
-            paisEditText.setText(paquete.pais)
-            lugaresInteresantesEditText.setText(paquete.lugaresInteresantes.joinToString())
-            precioEditText.setText(paquete.precio.toString())
-            descripcionEditText.setText(paquete.descripcion)
-            duracionEditText.setText(paquete.duracion)
-            transporte.setSelection(adapterSpinner.getPosition(paquete.transporte))
-            puntuacionRatingBar.rating = paquete.puntuacion.toFloat()
-            inicioTourCoordenadasX = paquete.inicioTourCoordenadas[0]
-            inicioTourCoordenadasY = paquete.inicioTourCoordenadas[1]
-            finTourCoordenadasX = paquete.finTourCoordenadas[0]
-            finTourCoordenadasY = paquete.finTourCoordenadas[1]
-        } else {
-            Toast.makeText(this, "Error al cargar el paquete", Toast.LENGTH_SHORT).show()
-            finish()
+
+        val position = intent.getIntExtra("position", -1)
+        val paquete = paquetes[position]
+
+        nombreEditText.setText(paquete.nombre)
+        paisEditText.setText(paquete.pais)
+        lugaresInteresantesEditText.setText(paquete.lugaresInteresantes.joinToString())
+        precioEditText.setText(paquete.precio)
+        descripcionEditText.setText(paquete.descripcion)
+        duracionEditText.setText(paquete.duracion.toString())
+        transporte.setSelection(adapterSpinner.getPosition(paquete.transporte))
+        puntuacionRatingBar.rating = paquete.puntuacion.toFloat()
+        inicioTourNombre.setText(paquete.inicioTourNombre)
+        finTourNombre.setText(paquete.finTourNombre)
+        inicioTourCoordenadasX.setText(paquete.inicioTourCoordenadas[0].toString())
+        inicioTourCoordenadasY.setText(paquete.inicioTourCoordenadas[1].toString())
+        finTourCoordenadasX.setText(paquete.inicioTourCoordenadas[0].toString())
+        finTourCoordenadasY.setText(paquete.inicioTourCoordenadas[1].toString())
+
+        val ButtonGuardar = findViewById<Button>(R.id.botonGuardar)
+        ButtonGuardar.setOnClickListener(){
+            paquete.nombre = nombreEditText.text.toString()
+            paquete.pais = paisEditText.text.toString()
+            paquete.lugaresInteresantes = lugaresInteresantesEditText.text.split(",").map { it.trim() }.toTypedArray()
+            paquete.precio = precioEditText.text.toString()
+            paquete.descripcion = descripcionEditText.text.toString()
+            paquete.duracion = duracionEditText.text.toString().toInt()
+            paquete.transporte = transporte.selectedItem.toString()
+            paquete.puntuacion = puntuacionRatingBar.rating.toDouble()
+            paquete.inicioTourNombre = inicioTourNombre.text.toString()
+            paquete.finTourNombre = finTourNombre.text.toString()
+            paquete.inicioTourCoordenadas = listOf(
+                inicioTourCoordenadasX.text.toString().toDouble(),
+                inicioTourCoordenadasY.text.toString().toDouble()
+            ).toTypedArray()
+            paquete.finTourCoordenadas = listOf(
+                finTourCoordenadasX.text.toString().toDouble(),
+                finTourCoordenadasY.text.toString().toDouble()
+            ).toTypedArray()
+
+            paquetes[position] = paquete
+            val paquetesJson = gson.toJson(paquetes)
+            file.writeText(paquetesJson)
+            this.finish()
         }
+    }
+
+    private fun readImagesFromDirectory(): List<String> {
+        val imagesDirectory = File(filesDir, "img")
+        return imagesDirectory.listFiles()?.filter { it.isFile }?.map { it.name } ?: emptyList()
     }
 }

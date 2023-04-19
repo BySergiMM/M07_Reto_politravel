@@ -38,6 +38,7 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
             val intent = Intent(this, PantallaDarDeAlta::class.java)
             startActivity(intent)
         }
+        onResume()
     }
 
     override fun onItemClick(item: ClasePaquetes) {
@@ -94,7 +95,6 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
             val popupMenu = PopupMenu(view.context, view)
             popupMenu.menuInflater.inflate(R.menu.menu_contextual, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener { menuItem ->
-                // Acción a realizar cuando se selecciona un elemento del menú
                 when (menuItem.itemId) {
                     R.id.editar -> {
                         val intent = Intent(this, PantallaModificar::class.java)
@@ -113,4 +113,20 @@ class PantallaPaquetes : AppCompatActivity(), Adapter.OnItemClickListener, Adapt
         }
         return true
     }
+    override fun onResume() {
+        super.onResume()
+
+        // Leer el archivo JSON actualizado y actualizar la lista de paquetes
+        val gson = Gson()
+        val updatedPackages = gson.fromJson(
+            File(this.filesDir, "infoViajes.json").readText(),
+            Array<ClasePaquetes>::class.java
+        ).toMutableList()
+        packages.clear()
+        packages.addAll(updatedPackages)
+
+        // Notificar al adaptador que los datos han cambiado
+        recyclerView.adapter?.notifyDataSetChanged()
+    }
+
 }

@@ -4,16 +4,16 @@ import java.io.Serializable
 
 data class ClasePaquetes(
     val id: Int,
-    val nombre: String,
-    val pais: String,
+    var nombre: String,
+    var pais: String,
     val img: String,
-    val lugaresInteresantes: Array<String>,
-    val puntuacion: Double,
-    val precio: String,
-    val descripcion: String,
-    val duracion: Int,
-    val transporte: String,
-    val inicioTourNombre: String,
-    val finTourNombre: String,
-    val inicioTourCoordenadas: Array<Double>,
-    val finTourCoordenadas: Array<Double>) : Serializable
+    var lugaresInteresantes: Array<String>,
+    var puntuacion: Double,
+    var precio: String,
+    var descripcion: String,
+    var duracion: Int,
+    var transporte: String,
+    var inicioTourNombre: String,
+    var finTourNombre: String,
+    var inicioTourCoordenadas: Array<Double>,
+    var finTourCoordenadas: Array<Double>) : Serializable

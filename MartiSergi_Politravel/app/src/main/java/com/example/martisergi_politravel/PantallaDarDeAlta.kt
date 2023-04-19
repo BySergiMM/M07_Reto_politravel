@@ -134,7 +134,7 @@ class PantallaDarDeAlta : AppCompatActivity() {
         return imagesDirectory.listFiles()?.filter { it.isFile }?.map { it.name } ?: emptyList()
     }
 
-    private class ImageAdapter(private val context: Context, private val imageNames: List<String>) : BaseAdapter() {
+    class ImageAdapter(private val context: Context, private val imageNames: List<String>) : BaseAdapter() {
         var selectedImageName: String? = null
 
         override fun getCount() = imageNames.size
