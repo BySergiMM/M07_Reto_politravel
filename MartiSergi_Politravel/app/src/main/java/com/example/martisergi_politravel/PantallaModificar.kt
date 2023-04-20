@@ -103,12 +103,12 @@ class PantallaModificar : AppCompatActivity() {
             paquete.transporte = transporte.selectedItem.toString()
             paquete.puntuacion = puntuacionRatingBar.rating.toDouble()
             paquete.inicioTourNombre = inicioTourNombre.text.toString()
-            paquete.finTourNombre = fias = listOf(
+            paquete.finTourNombre = finTourNombre.text.toString()
+            paquete.inicioTourCoordenadas = listOf(
                 inicioTourCoordenadasX.text.toString().toDouble(),
                 inicioTourCoordenadasY.text.toString().toDouble()
             ).toTypedArray()
-            paquete.finTounTourNombre.text.toString()
-            paquete.inicioTourCoordenadrCoordenadas = listOf(
+            paquete.finTourCoordenadas = listOf(
                 finTourCoordenadasX.text.toString().toDouble(),
                 finTourCoordenadasY.text.toString().toDouble()
             ).toTypedArray()
